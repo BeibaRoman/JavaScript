@@ -226,7 +226,7 @@ console.log("Do you have access to the content?", canAccessContent); */
 
 // ternary operator
 
-const balance = -1;
+// const balance = 1;
 // let message;
 
 // if (balance > 0) {
@@ -236,5 +236,231 @@ const balance = -1;
 // }
 // console.log(message);
 
-const message = balance > 0 ? "Positive balance" : "Negative balance";
+/* const message = balance > 0 ? "Positive balance" : "Negative balance";
+console.log(message); */
+
+/* let balance = 10000;
+const payment = 2000;
+
+console.log(
+  `The total cost of the order is ${balance} credits. Checking the amount of available funds in the account`
+);
+
+if (payment <= balance) {
+  balance -= payment;
+  console.log(`There are ${balance} credits left on the account`);
+} else {
+  console.log(
+    "There are not enough funds in the account to carry out the operation!"
+  );
+}
+
+console.log("Operation completed!");
+ */
+
+/* const totalSpent = 1620;
+let payment = 500;
+let discount = 0;
+
+if (totalSpent < 100) {
+  console.log(`Not a partner, discount: ${discount}%!`);
+  console.log(
+    `We place an order for the amount of ${payment} with a discount ${discount}%!`
+  );
+} else if (totalSpent > 100 && totalSpent < 1000) {
+  discount += 0.02 * 100;
+
+  console.log(`Bronze partner, discount: ${discount}%!`);
+  console.log(
+    `We place an order for the amount of ${(payment -=
+      (payment * discount) / 100)} with a discount ${discount}%!`
+  );
+} else if (totalSpent > 1000 && totalSpent < 5000) {
+  discount += 0.05 * 100;
+  console.log(`Silver partner, discount: ${discount}%!`);
+  console.log(
+    `We place an order for the amount of ${(payment -=
+      (payment * discount) / 100)} with a discount ${discount}%!`
+  );
+} else {
+  discount += 0.1 * 100;
+  console.log(`Gold partner, discount: ${discount}%!`);
+  console.log(
+    `We place an order for the amount of ${(payment -=
+      (payment * discount) / 100)} with a discount ${discount}%!`
+  );
+}
+ */
+
+/* const starts = 8;
+let price; */
+
+/* if (starts === 1) {
+  price = 20;
+  console.log(`Cost of the hotel: ${price}`);
+} else if (starts === 2) {
+  price = 30;
+  console.log(`Cost of the hotel: ${price}`);
+} else if (starts === 3) {
+  price = 50;
+  console.log(`Cost of the hotel: ${price}`);
+} else if (starts === 4) {
+  price = 70;
+  console.log(`Cost of the hotel: ${price}`);
+} else if (starts === 5) {
+  price = 120;
+  console.log(`Cost of the hotel: ${price}`);
+} else {
+  console.log("There are no such number of stars");
+}
+ */
+
+/* switch (starts) {
+  case 1:
+    price = 20;
+    console.log(`Cost of the hotel: ${price}`);
+    break;
+
+  case 2:
+    price = 30;
+    console.log(`Cost of the hotel: ${price}`);
+    break;
+
+  case 3:
+    price = 50;
+    console.log(`Cost of the hotel: ${price}`);
+    break;
+
+  case 4:
+    price = 70;
+    console.log(`Cost of the hotel: ${price}`);
+    break;
+
+  case 5:
+    price = 120;
+    console.log(`Cost of the hotel: ${price}`);
+    break;
+
+  default:
+    console.log("There are no such number of stars");
+}
+ */
+
+/* const starts = 52;
+let price; */
+
+/* if (starts === 1 || starts === 2) {
+  price = 20;
+  console.log(`Cost of the hotel: ${price}`);
+} else if (starts === 3 || starts === 4) {
+  price = 30;
+  console.log(`Cost of the hotel: ${price}`);
+} else if (starts === 5) {
+  price = 120;
+  console.log(`Cost of the hotel: ${price}`);
+} else {
+  console.log("There are no such number of stars");
+} */
+
+/* 
+switch (starts) {
+  case 1:
+  case 2:
+    price = 20;
+    console.log(`Cost of the hotel: ${price}$`);
+    break;
+
+  case 3:
+  case 4:
+    price = 30;
+    console.log(`Cost of the hotel: ${price}$`);
+    break;
+
+  case 5:
+    price = 120;
+    console.log(`Cost of the hotel: ${price}$`);
+    break;
+
+  default:
+    console.log("There are no such number of stars");
+}
+ */
+
+/* const option = 2;
+let message = "";
+
+switch (option) {
+  case 1:
+    message = "You can pick up the goods tomorrow from 12:00 at our office";
+    break;
+
+  case 2:
+    message = "The courier will deliver the order tomorrow from 9:00 to 18:00";
+
+    break;
+
+  case 3:
+    message = "The parcel will be sent today";
+
+    break;
+  default:
+    console.log("The manager will call you back");
+}
+
 console.log(message);
+ */
+
+/* 
+const minSalary = 500;
+const maxSalary = 5000;
+
+const employees = 12;
+
+let totalSalary = 0;
+
+for (let i = 1; i <= employees; i += 1) {
+  console.log(i);
+  const salary = Math.round(
+    Math.random() * (maxSalary - minSalary) + minSalary
+  );
+  totalSalary += salary;
+  console.log(`Employee salary numbe ${i} - ${salary}`);
+}
+console.log(`Total salary of all employees ${totalSalary}`);
+ */
+
+/* const min = 0;
+const max = 5;
+let total = 0;
+
+for (let i = min; i < max; i += 1) {
+  console.log(i);
+  if (i % 2 !== 0) {
+    console.log(`Not even: ${i}`);
+    continue;
+  }
+  console.log(`Even: ${i}`);
+  total += i;
+}
+console.log(total);
+ */
+
+const btnAdd = document.querySelector("button[data-add]");
+const reseBtn = document.querySelector("button[data-reset]");
+const valueInput = document.querySelector("input[data-value]");
+const outputEl = document.querySelector(".js-output span");
+
+let total = 0;
+
+btnAdd.addEventListener("click", function () {
+  const value = Number(valueInput.value);
+
+  total += value;
+  outputEl.textContent = total;
+  valueInput.value = "";
+});
+
+reseBtn.addEventListener("click", function () {
+  total = 0;
+  outputEl.textContent = total;
+});
