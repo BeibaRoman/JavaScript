@@ -464,3 +464,102 @@ reseBtn.addEventListener("click", function () {
   total = 0;
   outputEl.textContent = total;
 });
+
+//* Example 6 - Методи рядків та чейнінг
+// Напиши скрипт, який розраховує індекс маси тіла людини. Для цього необхідно розділити вагу в кілограмах на квадрат висоти людини у метрах.
+
+// Вага та висота зберігаються у змінних weight та height, але не як числа, а в вигляді рядків (спеціально для завдання). Не цілі числа можуть бути задані у вигляді 24.7 або 24,7, тобто як роздільник дробової частини може бути кома.
+
+// Індекс маси тіла необхідно округлити до однієї цифри після коми;
+
+// let weight = "88,3";
+// let height = "1.75";
+
+// weight = weight.replace(",", ".");
+// height = height.replace(",", ".");
+
+// const bmi = Number((weight / (height * height)).toFixed(1));
+// console.log(bmi); // 28.8
+// const indexWeight = weight.indexOf(",");
+// const indexHeight = height.indexOf(".");
+
+// const weightSl1 = weight.slice(0, indexWeight);
+// const weightSl2 = weight.slice(indexWeight + 1);
+
+// const heightSl1 = height.slice(0, indexHeight);
+// const heightSl2 = height.slice(indexHeight + 1);
+
+// const weightNum = Number(`${weightSl1}.${weightSl2}`);
+// const heightNum = Number(`${heightSl1}.${heightSl2}`);
+
+// console.log(weightNum);
+// console.log(heightNum);
+
+// const bmi = +(weightNum / Math.pow(heightNum, 2)).toFixed(1);
+// console.log(bmi);
+
+/* ======================================================= */
+
+//* Example 1 - Введення користувача та розгалуження
+// Використовуючи конструкцію if..else та prompt, напиши код, який питатиме: "Яка офіційна назва JavaScript?". Якщо користувач вводить ECMAScript, то показуй alert з рядком "Правильно!", в іншому випадку - "Не знаєте? ECMAScript!"
+
+// const userAnswer = prompt("Яка офіційна назва JavaScript?");
+// console.log(userAnswer);
+
+// if (userAnswer === "ECMAScript") {
+//   alert("Правельно!");
+// } else {
+//   alert("Не знаєте? ECMAScript!");
+// }
+
+// if (userAnswer === "ECMAScript") alert("Правельно!");
+// else alert("Не знаєте? ECMAScript!");
+
+// let msg = "";
+
+// userAnswer === "ECMAScript"
+//   ? (msg = "Правельно!")
+//   : (msg = "Не знаєте? ECMAScript!");
+
+// alert(msg);
+
+// let msg = userAnswer === "ECMAScript" ? "Правельно!" : "Не знаєте? ECMAScript!";
+
+// alert(msg);
+
+//! ==========================================
+
+//* Example 2 - Відображення часу (if...else)
+// Напиши скрипт для відображення годин та хвилин у консолі браузера у вигляді рядка формату "14 г. 26 хв.". Якщо значення змінної minutes дорівнює 0, то виводь рядок "14 г.", без хвилин.
+
+// const hours = 14;
+// const minutes = 0;
+// let msgTime = "";
+
+// if (minutes === 0) msgTime = `${hours} г.`;
+// else msgTime = `${hours} г. ${minutes} хв.`;
+// console.log(msgTime);
+
+// const hours = 14;
+// const minutes = 26;
+
+// let msgTime = minutes === 0 ? `${hours} г.` : `${hours} г. ${minutes} хв.`;
+// console.log(msgTime);
+
+//! ==========================================
+
+//* Example 4 - Вкладені розгалуження
+// Напиши скрипт, який порівнює числа у змінних a та b. Якщо обидва значення більше 100, то виведи в консоль максимальне з них. В протилежному випадку у консолі повинна бути сума значення b та числа 512.
+
+const a = 190;
+const b = 20;
+
+if (a >= 100 && b >= 100) {
+  // if (a > b) console.log(a);
+  // else console.log(b);
+  // a > b ? console.log(a) : console.log(b);
+
+  console.log(Math.max(a, b));
+} else {
+  console.log(b + 512);
+}
