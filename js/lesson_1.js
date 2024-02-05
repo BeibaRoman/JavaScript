@@ -551,15 +551,316 @@ reseBtn.addEventListener("click", function () {
 //* Example 4 - Вкладені розгалуження
 // Напиши скрипт, який порівнює числа у змінних a та b. Якщо обидва значення більше 100, то виведи в консоль максимальне з них. В протилежному випадку у консолі повинна бути сума значення b та числа 512.
 
-const a = 190;
-const b = 20;
+// const a = 190;
+// const b = 20;
 
-if (a >= 100 && b >= 100) {
-  // if (a > b) console.log(a);
-  // else console.log(b);
-  // a > b ? console.log(a) : console.log(b);
+// if (a >= 100 && b >= 100) {
+// if (a > b) console.log(a);
+// else console.log(b);
+// a > b ? console.log(a) : console.log(b);
 
-  console.log(Math.max(a, b));
-} else {
-  console.log(b + 512);
+//   console.log(Math.max(a, b));
+// } else {
+//   console.log(b + 512);
+// }
+
+//! ==========================================
+
+//* Example 10 - Дедлайн здачі проекту (switch)
+// Виконай рефакторинг коду задачі номер 5 використовуючи switch.
+
+// if (daysUntilDeadline === 0) {
+//   console.log("Сьогодні");
+// } else if (daysUntilDeadline === 1) {
+//   console.log("Завтра");
+// } else if (daysUntilDeadline === 2) {
+//   console.log("Післязавтра");
+// } else {
+//   console.log("Дата у майбутньому");
+// }
+
+// const daysUntilDeadline = 2;
+
+// switch (daysUntilDeadline) {
+//   case 0: {
+//     console.log("Сьогодні");
+//     break;
+//   }
+//   case 1: {
+//     console.log("Завтра");
+//     break;
+//   }
+//   case 2: {
+//     console.log("Післязавтра");
+//     break;
+//   }
+
+//   default: {
+//     console.log("Дата у майбутньому");
+//   }
+// }
+
+//* Example 11 - Цикл for
+// Напиши цикл for, який виводить у консоль браузера числа за зростанням від min до max, але тільки якщо число кратне 5.
+
+// const max = 100;
+// const min = 20;
+
+// for (let i = min; i <= max; i += 1) {
+//   if (i % 5 !== 0) continue;
+//   console.log(i);
+// }
+
+//! ==========================================
+
+//* Example 12 - Введення користувача та розгалуження
+// Напиши скрипт, який питатиме логін за допомогою prompt та логувати результат у консоль браузера.
+
+// Якщо відвідувач вводить "Адмін", то prompt запитує пароль
+// Якщо нічого не введено або натиснуто клавішу Esc - вивести рядок "Скасовано"
+// В іншому випадку вивести рядок "Я вас не знаю"
+// Пароль перевіряти так:
+
+// Якщо введено пароль "Я адмін", то вивести рядок "Здрастуйте!"
+// Інакше виводити рядок "Невірний пароль"
+
+// const login = prompt("Введіть Логін: ")?.trim();
+
+// console.log(login);
+
+// if (login === "Адмін") {
+//   const password = prompt("Введіть пароль: ");
+//   if (password === "Я адмін") console.log("Здрастуйте!");
+//   else console.log("Невірний пароль");
+// } else if (!login) {
+//   console.log('"Скасовано"');
+// } else {
+//   console.log("Я вас не знаю");
+// }
+
+//!==========================================
+// Магазин з продажу ремонтних дроїдів готовий до відкриття, залишилося написати скрипт для їх замовлення. Оголоси змінні та присвой їм відповідні значення:
+
+// pricePerDroid - ціна одного дроїда, значення 800
+// orderedQuantity - кількість дроїдів у замовленні, значення 6
+// deliveryFee - вартість доставки, значення 50
+// totalPrice - загальна сума замовлення до сплати, не забудь про вартість доставки
+// message - повідомлення про стан замовлення у форматі "You ordered droids worth <total price> credits. Delivery (<delivery fee> credits) is included in total price."
+
+/* const pricePerDroid = 800;
+const orderedQuantity = 6;
+const deliveryFee = 50;
+const totalPrice = pricePerDroid * orderedQuantity + deliveryFee;
+
+const message = `You ordered droids worth ${totalPrice} credits. Delivery (${deliveryFee} credits) is included in total price.`;
+console.log(message);
+ */
+
+// <!=================================================
+
+/* Функція makeMessage(name, price) складає і повертає повідомлення про покупку. Вона оголошує два параметри, значення яких будуть задаватися під час її виклику.
+
+name - назва товару
+price - ціна товару
+Доповни код функції таким чином, щоб у змінну message записувався рядок "You picked <product name>, price per item is <product price> credits", де <product name> і <product price> - це значення параметрів name і price. Використовуй синтаксис шаблонних рядків. */
+
+/* function makeMessage(name, price) {
+  // Change code below this line
+  const message = `You picked ${name}, price per item is ${price} credits`;
+  // Change code above this line
+  return message;
 }
+
+console.log(makeMessage("Radar", 6150));
+console.log(makeMessage("Scanner", 3500));
+console.log(makeMessage("Reactor", 8000));
+console.log(makeMessage("Engine", 4070));
+ */
+
+// <!========================================
+
+/* Функція makeOrderMessage(orderedQuantity, pricePerDroid, deliveryFee) складає і повертає повідомлення про покупку ремонтних дроїдів. Вона оголошує три параметри, значення яких будуть задаватися під час її виклику.
+
+orderedQuantity - кількість дроїдів у замовленні
+pricePerDroid - ціна одного дроїда
+deliveryFee - вартість доставки
+Доповни код функції таким чином, щоб вона повертала повідомлення про замовлення у форматі "You ordered droids worth <total price> credits. Delivery (<delivery fee> credits) is included in total price.". Не забудь про ціну доставки в обчисленнях загальної вартості. */
+
+/* function makeOrderMessage(orderedQuantity, pricePerDroid, deliveryFee) {
+  // Change code below this line
+  let message = `You ordered droids worth ${
+    orderedQuantity * pricePerDroid + deliveryFee
+  } credits. Delivery (${deliveryFee} credits) is included in total price.`;
+
+  // Change code above this line
+  return message;
+}
+
+console.log(makeOrderMessage(2, 100, 50));
+ */
+
+//!=========================================
+/* Станція з продажу ремонтних дроїдів готова до запуску, залишилося написати програмне забезпечення для відділу продажів.
+
+Функція makeTransaction(pricePerDroid, orderedQuantity, customerCredits) виконує транзакцію з продажу дроїдів і повертає повідомлення про результат операції. Вона оголошує три параметри, значення яких будуть задаватися під час її виклику:
+
+pricePerDroid - ціна одного дроїда
+orderedQuantity - кіл-сть замовлених дроїдів
+customerCredits - сума коштів на рахунку клієнта
+Доповни її наступним функціоналом:
+
+Оголоси змінну totalPrice для зберігання загальної суми замовлення і присвой їй вираз розрахунку цієї суми.
+Додай перевірку, чи зможе клієнт оплатити замовлення:
+якщо сума до сплати перевищує кількість кредитів на рахунку клієнта, запиши у змінну message рядок "Insufficient funds!";
+в іншому випадку, відніми суму покупки з рахунку клієнта і запиши у змінну message повідомлення: "You ordered <число> droids, you have <число> credits left". */
+
+// function makeTransaction(pricePerDroid, orderedQuantity, customerCredits) {
+//   let message;
+//   // Change code below this line
+//   let totalPrice = orderedQuantity * pricePerDroid;
+//   if (totalPrice > customerCredits) {
+//     message = "Insufficient funds!";
+//   } else {
+//     message = `You ordered ${orderedQuantity} droids, you have ${
+//       customerCredits - totalPrice
+//     } credits left`;
+//   }
+//   // Change code above this line
+//   return message;
+// }
+
+// console.log(makeTransaction(3000, 5, 23000));
+// console.log(makeTransaction(1000, 3, 15000));
+// console.log(makeTransaction(5000, 10, 8000));
+
+// !==============================================
+
+/* Функція getDiscount(totalSpent) визначає значення знижки, залежно від загальної суми витрачених грошей (параметр totalSpent) в магазині за весь час (партнерська програма). Знижка записується у змінну discount і повертається з функції як результат її роботи.
+
+Використовуючи розгалуження і логічні оператори, доповни код функції.
+
+Якщо витрачено від 50000 (включно) або більше кредитів - знижка 10% (золотий партнер)
+Якщо витрачено від 20000 (включно) до 50000 кредитів - знижка 5% (срібний партнер)
+Якщо витрачено від 5000 (включно) до 20000 кредитів - знижка 2% (бронзовий партнер)
+Якщо витрачено менше 5000 кредитів - знижка 0 (базовий партнер)
+Значення знижок кожного рівня зберігаються в однойменних константах BASE_DISCOUNT, BRONZE_DISCOUNT, SILVER_DISCOUNT і GOLD_DISCOUNT. */
+
+// function getDiscount(totalSpent) {
+//   const BASE_DISCOUNT = 0;
+//   const BRONZE_DISCOUNT = 0.02;
+//   const SILVER_DISCOUNT = 0.05;
+//   const GOLD_DISCOUNT = 0.1;
+//   let discount;
+//   // Change code below this line
+//   if (totalSpent >= 50000) {
+//     discount = GOLD_DISCOUNT;
+//   } else if (totalSpent >= 20000 && totalSpent <= 50000) {
+//     discount = SILVER_DISCOUNT;
+//   } else if (totalSpent >= 5000 && totalSpent > 2000) {
+//     discount = BRONZE_DISCOUNT;
+//   } else {
+//     discount = BASE_DISCOUNT;
+//   }
+
+//   // Change code above this line
+//   return discount;
+// }
+
+// console.log(getDiscount(137000));
+// console.log(getDiscount(46900));
+// console.log(getDiscount(8250));
+// console.log(getDiscount(1300));
+// console.log(getDiscount(5000));
+
+/*
+Функція getShippingCost(country) повинна перевіряти можливість доставки товару в країну користувача (параметр country) і повертати повідомлення про результат, що зберігається у змінній message. Обов'язково використовуй інструкцію switch.
+
+Формат рядка, що повертається "Shipping to <country> will cost <price> credits", де замість <country> і <price>, необхідно підставити відповідні значення.
+
+Список країн і вартість доставки:
+
+China - 100 кредитів
+Chile - 250 кредитів
+Australia - 170 кредитів
+Jamaica - 120 кредитів
+Зі списку видно, що доставка можлива не скрізь. Якщо зазначена країна відсутня у списку, то функція повинна повернути рядок "Sorry, there is no delivery to your country" 
+ */
+
+/* function getShippingCost(country) {
+  let message;
+  // Change code below this line
+  switch (country) {
+    case "China":
+      message = "Shipping to China will cost 100 credits";
+      break;
+    case "Chile":
+      message = "Shipping to Chile will cost 250 credits";
+      break;
+    case "Australia":
+      message = "Shipping to Australia will cost 170 credits";
+      break;
+    case "Jamaica":
+      message = "Shipping to Jamaica will cost 120 credits";
+      break;
+
+    default:
+      message = "Sorry, there is no delivery to your country";
+  }
+
+  // Change code above this line
+  return message;
+}
+
+console.log(getShippingCost("Australia"));
+console.log(getShippingCost("Germany"));
+console.log(getShippingCost("China"));
+console.log(getShippingCost("Chile"));
+console.log(getShippingCost("Jamaica")); */
+
+// !================================================
+
+/* Функція formatMessage(message, maxLength) приймає рядок (параметр message) і форматує його, якщо довжина перевищує значення в параметрі maxLength.
+
+Доповни код функції таким чином, що якщо довжина рядка:
+
+не перевищує maxLength, функція повертає його в початковому вигляді.
+більша за maxLength, то функція обрізає рядок до maxLength символів і додає в кінець три крапки "...", після чого повертає скорочену версію. */
+
+/* function formatMessage(message, maxLength) {
+  let result;
+  // Change code below this line
+  result =
+    message.length <= maxLength ? message : `${message.slice(0, maxLength)}...`;
+  /// Change code above this line
+  return result;
+}
+
+console.log(formatMessage("Curabitur ligula sapien", 16));
+console.log(formatMessage("Curabitur ligula sapien", 23));
+console.log(formatMessage("Vestibulum facilisis purus nec", 20));
+console.log(formatMessage("Vestibulum facilisis purus nec", 30));
+ */
+
+// !===============================================
+
+/*
+Функція checkForSpam(message) приймає рядок (параметр message), перевіряє його на вміст заборонених слів spam і sale, і повертає результат перевірки. Слова в рядку параметра message можуть бути у довільному регістрі, наприклад SPAM або sAlE.
+
+Якщо знайшли заборонене слово (spam або sale) то функція повертає буль true.
+Якщо в рядку відсутні заборонені слова, функція повертає буль false. 
+ */
+
+function checkForSpam(message) {
+  let result =
+    message.toLowerCase().includes("spam") ||
+    message.toLowerCase().includes("sale");
+
+  // Change code below this line
+  // Change code above this line
+  return result;
+}
+
+console.log(checkForSpam("Latest technology news"));
+console.log(checkForSpam("JavaScript weekly newsletter"));
+console.log(checkForSpam("Get best sale offers now!"));
+console.log(checkForSpam("Amazing SalE, only tonight!"));
