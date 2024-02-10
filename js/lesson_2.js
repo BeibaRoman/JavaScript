@@ -125,6 +125,23 @@ console.log(numbers.pop());
 console.log(numbers);
  */
 
+// Method .unshift()
+
+/* const fruits = ["Banana", "Orange", "Apple", "Mango"];
+
+console.log(fruits.unshift("Lemon", "Pineapple"));
+console.log(fruits);
+ */
+
+// Method .shift()
+/* const fruits = ["Banana", "Orange", "Apple", "Mango"];
+console.log(fruits.shift());
+fruits.shift();
+fruits.shift();
+fruits.shift();
+console.log(fruits.shift());
+console.log(fruits);
+ */
 /* Method slice() */
 
 /* const clients = ["Mango", "Ajax", "Poly", "Kiwi"];
