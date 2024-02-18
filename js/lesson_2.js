@@ -1035,3 +1035,253 @@ removeCourse("Vue"); // 'Курс із таким ім'ям не знайден�
 updateCourse("HTML", "Next.js");
 console.log(courses); // ['HTML', 'CSS', 'JavaScript', 'PostgreSQL', 'NestJS']
  */
+
+// ? HOMEWORK
+
+//!Exercise - 1
+// Запиши умову в інструкції if таким чином, щоб функція працювала правильно.
+
+/* function checkAge(age) {
+  if (age >= 18) {
+    // Change this line
+    return "You are an adult";
+  }
+
+  return "You are a minor";
+}
+
+console.log(checkAge(20));
+console.log(checkAge(8));
+console.log(checkAge(18)); */
+
+//!Exercise - 2
+// Функція checkPassword отримує пароль користувача у параметр password, перевіряє його на збіг з паролем адміністратора у змінній ADMIN_PASSWORD і повертає повідомлення про результат порівняння.
+
+// Виконай рефакторинг коду функції checkPassword, використовуючи патерн «раннє повернення»:
+
+// видали змінну message
+// видали else
+// код повинен працювати так само, як і до оптимізації
+/* function checkPassword(password) {
+  const ADMIN_PASSWORD = "jqueryismyjam";
+
+  if (password === ADMIN_PASSWORD) {
+    return "Welcome!";
+  }
+  return "Access denied, wrong password!";
+}
+
+console.log(checkPassword("mangohackzor"));
+console.log(checkPassword("jqueryismyjam")); */
+
+//!Exercise - 3
+// Функція checkStorage перевіряє можливість оформлення замовлення і повертає повідомлення про результат. Вона приймає два параметри, значення яких будуть задаватися під час її виклику.
+
+// available - доступна кількість товарів на складі
+// ordered - кількість одиниць товару в замовленні
+// Виконай рефакторинг коду функції checkStorage, використовуючи патерн «раннє повернення».
+
+// function checkStorage(available, ordered) {
+//   if (ordered === 0) {
+//     return "Your order is empty!";
+//   }
+//   if (ordered > available) {
+//     return "Your order is too large, not enough goods in stock!";
+//   }
+//   return "The order is accepted, our manager will contact you";
+// }
+
+// console.log(checkStorage(100, 50));
+// console.log(checkStorage(100, 130));
+// console.log(checkStorage(70, 0));
+// console.log(checkStorage(200, 250));
+
+//!Exercise - 4
+// Напиши функцію getExtremeElements(array), яка приймає один параметр array - масив елементів довільної довжини. Функція повинна повертати масив з двох елементів - першого і останнього елемента параметра array.
+/* 
+function getExtremeElements(array) {
+  return [array[0], array[array.length - 1]];
+}
+
+console.log(getExtremeElements([1, 2, 3, 4, 5]));
+console.log(getExtremeElements(["Earth", "Mars", "Venus"]));
+ */
+
+//!Exercise - 5
+
+// Доповни код функції splitMessage(message, delimiter) таким чином, щоб вона повертала у змінній words результат поділу рядка message за роздільником delimiter - масив рядків.
+
+/* function splitMessage(message, delimiter) {
+  let words;
+
+  words = message.split(delimiter);
+
+  return words;
+}
+
+console.log(splitMessage("Mango hurries to the train", " "));
+console.log(splitMessage("Mango", ""));
+ */
+
+//!Exercise - 5
+
+// Сервісу гравірування прикрас потрібна функція, яка б автоматично рахувала ціну гравірування, залежно від кількості слів і ціни за слово.
+
+// Оголошена функція calculateEngravingPrice(message, pricePerWord). Ця функція приймає рядок, що складається зі слів, розділених лише пробілами (параметр message) та ціну гравірування одного слова (параметр pricePerWord).
+
+// Напиши тіло функції, щоб вона повертала загальну вартість гравірування усіх слів в рядку.
+
+/* function calculateEngravingPrice(message, pricePerWord) {
+  return message.split(" ").length * pricePerWord;
+}
+
+console.log(calculateEngravingPrice("JavaScript is in my blood", 10));
+console.log(calculateEngravingPrice("JavaScript is in my blood", 20));
+console.log(calculateEngravingPrice("Web-development is creative work", 40));
+ */
+
+//!Exercise - 6
+
+// Напиши функцію makeArray(firstArray, secondArray, maxLength) для створення нового масиву з усіма елементами двох вихідних firstArray і secondArray. Параметр maxLength містить максимально допустиму довжину нового масиву.
+
+// Якщо кількість елементів нового масиву більша за maxLength, функція повинна повернути копію масиву довжиною maxLength елементів. В іншому випадку функція повинна повернути новий масив повністю.
+
+/* function makeArray(firstArray, secondArray, maxLength) {
+  return firstArray.concat(secondArray).length > maxLength
+    ? firstArray.concat(secondArray).slice(0, maxLength)
+    : firstArray.concat(secondArray);
+}
+
+console.log(makeArray(["Mango", "Poly"], ["Ajax", "Chelsea"], 5)); */
+
+//!Exercise - 7
+
+/* function calculateTotal(number) {
+
+  let sum = 0;
+
+  for (let i = 1; i <= number; i += 1) {
+    sum += i;
+  }
+  return sum;
+}
+
+console.log(calculateTotal(3));
+console.log(calculateTotal(24));
+ */
+
+//!Exercise - 8
+
+/* const arr = [1, 2, 3, 65, 9, 3];
+
+for (let i = 0; i < arr.length; i += 1) console.log(arr[i]); */
+
+/* function findLongestWord(string) {
+  const wordsArray = string.split(" ");
+
+  let word = string.split(" ")[0];
+
+  for (let i = 0; i < wordsArray.length; i += 1) {
+    if (word.length < wordsArray[i].length) {
+      word = wordsArray[i];
+    }
+  }
+  return word;
+}
+
+console.log(findLongestWord("The quick brown fox jumped over the lazy dog")); */
+
+/* function createArrayOfNumbers(min, max) {
+  const numbers = [];
+
+  for (let i = min; i <= max; i += 1) {
+    numbers.push(i);
+  }
+
+  return numbers;
+}
+
+console.log(createArrayOfNumbers(14, 17));
+ */
+
+//!Exercise - 9
+// Напиши функцію filterArray(numbers, value), яка приймає масив чисел (параметр numbers) і повертає новий масив, в якому будуть тільки ті елементи масиву numbers, які більші за значення параметра value (число).
+
+/* function filterArray(numbers, value) {
+
+  const filteredArray = [];
+
+  for (let i = 0; i < numbers.length; i += 1) {
+    if (numbers[i] > value) {
+      filteredArray.push(numbers[i]);
+    }
+  }
+  return filteredArray;
+}
+
+console.log(filterArray([1, 2, 3, 4, 5], 3)); */
+
+// Спільними елементами масивів називають ті елементи, які присутні у всіх масивах.
+
+// Наприклад, у двох масивах [1, 3, 5] і [0, 8, 5, 3] спільними будуть числа 3 і 5, оскільки вони присутні в обох вихідних масивах. А числа 0, 1 і 8 присутні тільки в одному з масивів.
+
+// Напиши функцію getCommonElements(array1, array2), яка отримує два масиви довільної довжини в параметри array1 і array2, і повертає новий масив, що складається з тих елементів, які присутні в обох вихідних масивах.
+
+/* function getCommonElements(array1, array2) {
+  const arr = [];
+
+  for (let i = 0; i < array1.length; i += 1) {
+    if (array2.includes(array1[i])) {
+      arr.push(array1[i]);
+    }
+  }
+  return arr;
+}
+
+console.log(getCommonElements([1, 2, 3], [2, 4]));
+ */
+
+//!Exercise - 10
+
+/* function filterArray(numbers, value) {
+  const filteredNumbers = [];
+
+  for (const number of numbers) {
+    if (number > value) {
+      filteredNumbers.push(number);
+    }
+  }
+
+  return filteredNumbers;
+}
+
+console.log(filterArray([1, 2, 3, 4, 5], 3)); */
+
+//!Exercise - 11
+
+/* function getEvenNumbers(start, end) {
+  const numbersArrey = [];
+
+  for (let i = start; i <= end; i += 1) {
+    console.log(i);
+    if (i % 2 === 0) {
+      numbersArrey.push(i);
+    }
+  }
+  return numbersArrey;
+}
+console.log(getEvenNumbers(3, 11));
+ */
+
+//!Exercise - 12
+
+function includes(array, value) {
+  for (const num of array) {
+    if (num === value) {
+      return true;
+    }
+  }
+  return false;
+}
+
+console.log(includes([1, 2, 3, 4, 5], 3));
