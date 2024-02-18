@@ -585,7 +585,7 @@ console.log(langs);
 //* Example 14 - Пошук елемента
 // Напиши скрипт пошуку найменшого числа у масиві. Код повинен працювати для будь-якого масиву чисел. Використовуй цикл для розв'язання задачі.
 
-const numbers = [2, 17, 94, 1, 23, 37];
+/* const numbers = [2, 17, 94, 1, 23, 37];
 
 let smallestNumber = numbers[0];
 
@@ -595,3 +595,443 @@ for (const number of numbers) {
   }
 }
 console.log("🚀 ~ smallestNumber:", smallestNumber);
+ */
+
+// Module 2 topic  function learn (){}
+
+// function multiply() {
+//   console.log("Це лог на момент виклику функції multiply");
+// }
+
+// multiply();
+
+/* function multiply(x, y, z) {
+  console.log(`Результат множення дорівнює ${x * y * z}`);
+}
+
+multiply(1, 2, 3);
+multiply(5, 2, 8);
+multiply(2, 1, 323);
+ */
+/* 
+function multiply(x, y, z) {
+  console.log("Код до return виконується звичайним чином");
+
+  return x * y * z;
+}
+
+let result = multiply(2, 3, 6);
+console.log(result);
+
+result = multiply(4, 8, 12);
+console.log(result);
+
+result = multiply(17, 6, 25);
+console.log(result);
+ */
+
+/* function multiply(x, y, z) {
+  console.log(`Результат множення дорівнює ${x * y * z}`);
+}
+
+console.log("Лог до виклику функції multiply");
+multiply(2, 3, 5);
+console.log("Лог після виклику функції multiply");
+ */
+
+/* function count(countFrom = 0, countTo = 10, step = 1) {
+  console.log(`countFrom = ${countFrom}, countTo = ${countTo}, step = ${step}`);
+
+  for (let i = countFrom; i <= countTo; i += step) {
+    console.log(i);
+  }
+}
+
+count(1, 5);
+
+count(2);
+count();
+ */
+
+/* function multiply() {
+  let total = 1;
+  for (const argument of arguments) {
+    total *= argument;
+  }
+  return total;
+}
+
+console.log(multiply(1, 2, 3)); //  6
+console.log(multiply(1, 2, 3, 4)); //  24
+console.log(multiply(1, 2, 3, 4, 5)); //  120
+ */
+/* 
+function fn() {
+  const args = Array.from(arguments);
+  return args;
+}
+
+console.log(fn(2, 5, 6, 3, 5, 9));
+ */
+
+/* function fn(...args) {
+  return args;
+}
+
+console.log(fn(2, 3, 8, 9, 6, 2));
+ */
+
+/* function withdraw(amount, balance) {
+  if (amount === 0) {
+    console.log("Для проведення операції введіть суму більшу за нуль");
+  } else if (amount > balance) {
+    console.log("Недостатньо коштів на рахунку");
+  } else {
+    console.log("Операція зняття коштів проведена успішно");
+  }
+}
+
+withdraw(0, 300);
+withdraw(500, 300);
+withdraw(100, 300); */
+
+/* function withdraw(amount, balance) {
+  if (amount === 0) {
+    console.log("Для проведення операції введіть суму більшу за нуль");
+    return;
+  }
+
+  if (amount > balance) {
+    console.log("Недостатньо коштів на рахунку");
+    return;
+  }
+
+  console.log("Операція зняття коштів проведена");
+}
+
+withdraw(0, 300);
+withdraw(500, 300);
+withdraw(100, 300);
+ */
+
+// Оголошення функції (function declaration)
+/* function multiply(x, y, z) {
+  console.log(`Результат множення дорівнює ${x * y * z}`);
+}
+
+multiply(1, 2, 3);
+ */
+
+// Функціональний вираз (function expression)
+
+/* const multiply = function (x, y, z) {
+  console.log(`Результат множення дорівнює ${x * y * z}`);
+};
+
+multiply(1, 2, 3);
+ */
+
+//! Practice from first video module 2 part 2
+
+//? ==============Exercise 1=======================
+/* const multiply = function (items) {
+  let totalSum = 0;
+
+  for (const item of items) {
+    totalSum += item;
+  }
+
+  return totalSum;
+};
+
+console.log(multiply([5, 23, 689, 2, 6]));
+ */
+//? ==============Exercise 2=======================
+/* const logItems = function (items) {
+  for (const item of items) {
+    console.log(item);
+  }
+};
+
+logItems(["Mango", "Kiwi", "Poly", "Ajax"]);
+logItems([1, 2, 3, 4, 5]);
+ */
+
+//? ==============Exercise 3=======================
+
+/* const logins = ["m4ngoDoge", "k1widab3st", "poly1scute", "aj4xth3m4n"]; */
+
+/* const findLogin = function (allLogins, loginToFind) {
+  for (const login of allLogins) {
+    if (login === loginToFind) {
+      return `User ${loginToFind} found`;
+    }
+  }
+
+  return `User ${loginToFind} not found`;
+};
+
+console.log(findLogin(logins, "k1widab3st")); */
+
+/* const findLogin = function (allLogins, loginToFind) {
+  return allLogins.includes(loginToFind)
+    ? `User ${loginToFind} found`
+    : `User ${loginToFind} not found`;
+};
+
+console.log(findLogin(logins, "romanTofind"));
+console.log(findLogin(logins, "poly1scute"));
+ */
+
+//? ============== Exercise 4 =======================
+
+/* const findSmallesNumber = function (numbers) {
+  let smallestNumber = numbers[0];
+
+  for (let i = 0; i < numbers.length - 1; i += 1) {
+    // console.log(numbers[i]);
+    if (numbers[i] < smallestNumber) {
+      smallestNumber = numbers[i];
+    }
+  }
+  return smallestNumber;
+};
+
+console.log(findSmallesNumber([3, 8, 12, -2, 15]));
+ */
+
+/* function findSmallestNumber(numbers) {
+  let smallestNumber = numbers[0];
+
+  for (const number of numbers) {
+    if (number < smallestNumber) {
+      smallestNumber = number;
+    }
+  }
+  return smallestNumber;
+}
+
+console.log(findSmallestNumber([3, 8, 12, -2, 15]));
+console.log(findSmallestNumber([100, 54, 8, 12, 47]));
+console.log(findSmallestNumber([7, 21, 84, 15, 4]));
+ */
+
+/* const changeCase = function (string) {
+  const letters = string.split("");
+  let invertedString = "";
+
+  for (const letter of letters) {
+    if (letter === letter.toLowerCase()) {
+      invertedString += letter.toUpperCase();
+    } else {
+      invertedString += letter.toLowerCase();
+    }
+  }
+  return invertedString;
+};
+
+console.log(changeCase("qweRTY"));
+console.log(changeCase("OPlknlKLPKweRTY"));
+ */
+/* 
+const changeCase = function (string) {
+  const letters = string.split("");
+  let invertedString = "";
+
+  for (const letter of letters) {
+    const isInLowerCase = letter === letter.toLowerCase();
+    invertedString += isInLowerCase
+      ? letter.toUpperCase()
+      : letter.toLowerCase();
+  }
+  return invertedString;
+};
+
+console.log(changeCase("qweRTY"));
+console.log(changeCase("OPlknlKLPKfvdfbdsfzvTY"));
+ */
+
+/* const slugify = function (string) {
+  return string.toLowerCase().split(" ").join("-");
+};
+
+console.log(slugify("Top 10 benefits of React framework"));
+console.log(slugify("Azure Static Web Apps are Awesome"));
+console.log(slugify("Technical writing tips for non-native English speakers"));
+ */
+
+/* const fn = function () {
+  console.log(arguments);
+
+  const arg = Array.from(arguments);
+  return arg;
+};
+
+console.log(fn(1, 2, 3));
+console.log(fn(1, 2, 3, 4, 5));
+console.log(fn(1, 2, 3, 4, 5, 6, 7));
+ */
+
+/* const fn = function (a, b, c, ...arg) {
+  console.log(`${a} ${b} ${c}`);
+  console.log(arg);
+};
+
+fn("hello", 1, 2, 3);
+fn("aloha", 1, 2, 3, 4, 5);
+fn("hi", 1, 2, 3, 4, 5, 6, 7);
+
+ */
+
+/* const add = function (...args) {
+  console.log(args);
+  let total = 0;
+
+  for (const number of args) {
+    total += number;
+  }
+
+  return total;
+};
+
+console.log(add(1, 2, 3));
+console.log(add(1, 2, 4, 5, 6));
+ */
+
+/* const filterNumbers = function (array, ...args) {
+  let filteredArray = [];
+
+  for (let i = 0; i < array.length; i += 1) {
+    if (args.includes(array[i])) {
+      filteredArray.push(array[i]);
+    }
+  }
+  return filteredArray;
+};
+
+console.log(filterNumbers([1, 2, 3, 4, 5], 10, 15, 2, 3, 8)); // [2, 3]
+console.log(filterNumbers([10, 15, 25, 30], 23, 30, 18, 15)); // [30, 15]
+console.log(filterNumbers([100, 200, 300, 400, 500], 7, 12, 200, 64));
+ */
+
+//! Example 1 - Індекс маси тіла
+// Напиши функцію calcBMI(weight, height) яка розраховує та повертає індекс маси тіла людини. Для цього необхідно розділити вагу в кілограмах на квадрат висоти людини в метрах.
+
+// Вага та висота будуть спеціально передані як рядки. Не цілі числа можуть бути задані у вигляді 24.7 або 24,7, тобто як роздільник дробової частини може бути кома.
+
+// Індекс маси тіла необхідно округлити до однієї цифри після коми;
+
+/* function calcBMI(weight, height) {
+  weight = convertToDecimal(weight);
+  height = convertToDecimal(height);
+
+  const result = weight / (height * height);
+
+  return getRoundedNumber(result);
+}
+
+function convertToDecimal(str) {
+  return Number(str.replace(",", "."));
+}
+
+function getRoundedNumber(num) {
+  return Math.round(num * 10) / 10;
+}
+
+const bmi = calcBMI("88,3", "1.75");
+console.log(bmi); 
+
+const bmi2 = calcBMI("90,9", "1,50");
+console.log(bmi2);
+ */
+
+//* Example 2 - Найменше з чисел
+// Напиши функцію min(a,b), яка повертає найменше з чисел a та b.
+/* 
+function min(a, b) {
+  return Math.min(a, b);
+  return a < b ? a : b;
+}
+
+console.log(min(2, 5));
+console.log(min(3, -1));
+console.log(min(1, 1));
+ */
+
+//* Example 6 - Пошук найбільшого елемента
+// Напиши функцію findLargestNumber(numbers)яка шукає найбільше число в масиві.
+
+/* function findLargestNumber(numbers) {
+  let largestNumber = numbers[0];
+
+  for (const number of numbers) {
+    if (number > largestNumber) largestNumber = number;
+  }
+  return largestNumber;
+}
+
+console.log(findLargestNumber([2, 17, 94, 1, 23, 37])); // 94
+console.log(findLargestNumber([49, 4, 7, 83, 12])); // 83 */
+
+//* Example 7 - Середнє значення
+// Напишіть функцію calAverage() яка приймає довільну кількість аргументів і повертає їхнє середнє значення. Усі аргументи будуть лише числами.
+
+/* function calAverage() {
+  let total = 0;
+
+  for (const number of arguments) {
+    total += number;
+  }
+
+  return (total = total / arguments.length);
+}
+
+console.log(calAverage(1, 2, 3, 4)); // 2.5
+console.log(calAverage(14, 8, 2)); // 8
+console.log(calAverage(27, 43, 2, 8, 36)); // 23.2 */
+
+//! ===========================
+
+//* Example 9 - Колекція курсів (includes, indexOf, push і т. д.)
+// Напишіть функції для роботи з колекцією навчальних курсів courses:
+
+//* addCourse(name) - додає курс до кінця колекції
+//* removeCourse(name) - видаляє курс із колекції
+//* updateCourse(oldName, newName) - змінює ім'я на нове
+
+/* const courses = ["HTML", "CSS", "JavaScript", "React", "PostgreSQL"];
+
+function addCourse(name) {
+  if (courses.includes(name)) {
+    console.log("Ви вже маєте такий курс");
+    return;
+  }
+  courses.push(name);
+}
+
+function removeCourse(name) {
+  const index = courses.indexOf(name);
+
+  if (index === -1) console.log("Курс із таким ім'ям не знайдено");
+  else courses.splice(index, 1);
+}
+
+function updateCourse(oldName, newName) {
+  const index = courses.indexOf(oldName);
+
+  if (index === -1) console.log("Курс із таким ім'ям не знайдено");
+  else if (courses.includes(newName)) console.log("Ви вже маєте такий курс");
+  else courses[index] = newName;
+}
+
+addCourse("Express");
+console.log(courses); // ['HTML', 'CSS', 'JavaScript', 'React', 'PostgreSQL', 'Express']
+addCourse("CSS"); // 'Ви вже маєте такий курс'
+
+removeCourse("React");
+console.log(courses); // ['HTML', 'CSS', 'JavaScript', 'PostgreSQL', 'Express']
+removeCourse("Vue"); // 'Курс із таким ім'ям не знайдено'
+
+updateCourse("HTML", "Next.js");
+console.log(courses); // ['HTML', 'CSS', 'JavaScript', 'PostgreSQL', 'NestJS']
+ */
