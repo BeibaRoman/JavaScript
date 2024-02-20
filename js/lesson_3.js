@@ -158,7 +158,7 @@ bookShelf.addBook(); */
 
 bookShelf.getBooks(); */
 
-const bookShelf = {
+/* const bookShelf = {
   books: ["The Last Kingdom"],
   getBooks() {
     return this.books;
@@ -182,3 +182,106 @@ console.log(bookShelf.getBooks());
 
 bookShelf.removeBook("The Mist");
 console.log(bookShelf.getBooks());
+ */
+
+/* const book = {
+  title: "The Last Kingdom",
+  author: "Bernard Cornwell",
+  genres: ["historical prose", "adventure"],
+  rating: 8.38,
+};
+
+for (const key in book) {
+  console.log(key);
+  console.log(book[key]);
+}
+ */
+
+/* const animal = {
+  legs: 4,
+};
+
+const dog = Object.create(animal);
+
+console.log(dog);
+
+dog.name = "Mango";
+
+console.log(dog);
+console.log(dog.name);
+console.log(dog.legs); */
+
+/* const book = {
+  title: "The Last Kingdom",
+  author: "Bernard Corwell",
+  genres: ["historical prose", "adventure"],
+  rating: 8.38,
+};
+
+for (const key in book) {
+  if (book.hasOwnProperty(key)) {
+    console.log(key);
+    console.log(book[key]);
+  }
+}
+ */
+
+/* const book = {
+  title: "The Last Kingdom",
+  author: "Bernard Cornwell",
+  genres: ["historical prose", "adventure"],
+  rating: 8.38,
+};
+
+const keys = Object.keys(book);
+
+for (const key of keys) {
+  console.log(key);
+  console.log(book[key]);
+} */
+
+/* const book = {
+  title: "The Last Kingdom",
+  author: "Bernard Cornwell",
+  rating: 8.38,
+};
+
+const keys = Object.keys(book);
+console.log(keys);
+
+const values = Object.values(book);
+console.log(values); */
+
+/* const goods = {
+  apples: 6,
+  grapes: 3,
+  bread: 4,
+  cheese: 7,
+};
+
+const values = Object.values(goods);
+console.log(values);
+
+let total = 0;
+
+for (const value of values) {
+  total += value;
+}
+
+console.log(total);
+ */
+
+const book = {
+  title: "The Last Kingdom",
+  author: "Bernard Cornwell",
+  rating: 8.38,
+};
+
+const keys = Object.keys(book);
+console.log(keys);
+
+const values = Object.values(book);
+console.log(values);
+
+const entries = Object.entries(book);
+console.log(entries);
