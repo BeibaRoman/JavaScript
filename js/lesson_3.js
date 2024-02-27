@@ -271,7 +271,7 @@ for (const value of values) {
 console.log(total);
  */
 
-const book = {
+/* const book = {
   title: "The Last Kingdom",
   author: "Bernard Cornwell",
   rating: 8.38,
@@ -285,3 +285,263 @@ console.log(values);
 
 const entries = Object.entries(book);
 console.log(entries);
+ */
+
+/* const books = [
+  {
+    title: "The Last Kingdom",
+    author: "Bernard Cornwell",
+    rating: 8.38,
+  },
+  {
+    title: "На березі спокійних вод",
+    author: "Роберт Шеклі",
+    rating: 8.51,
+  },
+  {
+    title: "Сон смішної людини",
+    author: "Федір Достоєвський",
+    rating: 7.75,
+  },
+];
+ */
+/* const bookNames = [];
+for (const book of books) {
+  console.log(book);
+  console.log(book.title);
+  console.log(book.rating);
+  console.log(book.author);
+  bookNames.push(book.title);
+}
+
+console.log(bookNames);
+ */
+
+/* let totalRating = 0;
+
+for (const book of books) {
+  console.log(book.rating);
+  totalRating += book.rating;
+}
+
+const averageRating = Number((totalRating / books.length).toFixed(1));
+console.log(averageRating);
+ */
+
+/* const temps = [14, -4, 25, 8, 11];
+
+console.log(Math.max(...temps));
+
+console.log(temps);
+
+const copyOfTemps = [...temps];
+console.log(copyOfTemps);
+ */
+
+/* const lastWeekTemps = [14, 25, 11];
+
+const currentWeekTemps = [23, 17, 18];
+
+const allTemps = [...lastWeekTemps, ...lastWeekTemps];
+
+console.log(lastWeekTemps);
+console.log(currentWeekTemps);
+console.log(allTemps); */
+
+/* const first = { propA: 5, propB: 10 };
+const second = { propC: 15 };
+
+const third = { ...first, ...second };
+
+console.log(first);
+console.log(second);
+console.log(third); */
+
+/* const first = { propA: 5, propB: 10, propC: 50 };
+const second = { propC: 15, propD: 20 };
+
+const third = { ...first, ...second };
+
+console.log(third);
+
+const fourth = { ...second, ...first };
+
+console.log(fourth); */
+
+/* const first = { propA: 5, propB: 10, propC: 50 };
+const second = { propC: 15 };
+
+const third = { propB: 20, ...first, ...second };
+console.log(third);
+
+const fourth = { ...first, ...second, propB: 20 };
+console.log(fourth);
+
+const fifth = { ...first, propB: 20, ...second };
+console.log(fifth);
+ */
+
+/* function multiply(...args) {
+  console.log(args);
+}
+
+multiply(1, 2);
+multiply(1, 2, 3);
+multiply(1, 2, 3, 4);
+ */
+
+/* function multiply(firstNumber, secondNumber, ...otherArgs) {
+  console.log(firstNumber);
+  console.log(secondNumber);
+  console.log(otherArgs);
+}
+
+multiply(1, 2);
+multiply(1, 2, 3);
+multiply(1, 2, 3, 4); */
+
+/* const playlist = {
+  name: "Мой супер плейлист",
+  rating: 5,
+  tracks: ["трек-1", "трек-2", "трек-3"],
+  changeName(newName) {
+    this.name = newName;
+  },
+  addTrack(newTrack) {
+    this.tracks.push(newTrack);
+  },
+  updateRating(newRating) {
+    this.rating = newRating;
+  },
+  getTracksCount() {
+    return this.tracks.length;
+  },
+};
+
+console.log(playlist.getTracksCount());
+
+playlist.changeName("New Name ");
+
+playlist.addTrack("new track - 1");
+
+console.log(playlist.getTracksCount());
+
+playlist.updateRating(8);
+console.log(playlist);
+ */
+
+/* const feedback = {
+  good: 5,
+  neutral: 10,
+  bad: 3,
+};
+
+console.log(feedback); */
+
+/* const arrKey = Object.keys(feedback);
+
+for (let i = 0; i < arrKey.length; i += 1) {
+  console.log(feedback[arrKey[i]]);
+} */
+
+/* console.log(arrKey); */
+
+/* const arrValues = Object.values(feedback);
+console.log(arrValues);
+
+for (const value of arrValues) {
+  console.log(value);
+}
+ */
+
+/* const arrEntries = Object.entries(feedback);
+console.log(arrEntries);
+
+for (const entry of arrEntries) {
+  console.log(entry[entry.length - 1]);
+}
+ */
+
+const friends = [
+  { name: "Mango", online: false },
+  { name: "Kiwi", online: true },
+  { name: "Poly", online: false },
+  { name: "Ajax", online: false },
+];
+
+console.table(friends);
+
+/* const findFriendByName = function (allfriends, friendName) {
+  for (const friend of allfriends) {
+    if (friend.name === friendName) {
+      return "Знайшли друга!";
+    }
+  }
+  return "Не знайшли друга!";
+};
+
+console.log(findFriendByName(friends, "Poly"));
+console.log(findFriendByName(friends, "Chelsy")); */
+
+// Отримуємо імена всіх друзів
+
+/* const getAllNames = function (allFriends) {
+  const names = [];
+  for (const friend of allFriends) {
+    console.log(friend.name);
+    names.push(friend.name);
+  }
+  return names;
+};
+
+console.log(getAllNames(friends));
+ */
+
+// Отримуємо імена всіх друзів які онлайн
+
+/* function getNamesByOnline(allFriends) {
+  const nameByStatus = [];
+  for (const friend of allFriends) {
+    console.log(friend.name);
+    if (friend.online) {
+      nameByStatus.push(friend.name);
+    }
+  }
+  return nameByStatus;
+}
+
+console.log(getNamesByOnline(friends)); */
+
+/* function getNamesByOffline(allFriends) {
+  const nameByStatus = [];
+  for (const friend of allFriends) {
+    console.log(friend.name);
+    if (!friend.online) {
+      nameByStatus.push(friend.name);
+    }
+  }
+  return nameByStatus;
+}
+
+console.log(getNamesByOffline(friends));
+ */
+
+const getFriendsByStatus = function (allFriends) {
+  const friendsByStatus = {
+    online: [],
+    offline: [],
+  };
+
+  for (const friend of allFriends) {
+    console.log(friend);
+
+    if (friend.online) {
+      friendsByStatus.online.push(friend);
+      continue;
+    }
+    friendsByStatus.offline.push(friend);
+  }
+  return friendsByStatus;
+};
+
+console.log(getFriendsByStatus(friends));
