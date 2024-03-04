@@ -462,14 +462,14 @@ for (const entry of arrEntries) {
 }
  */
 
-const friends = [
+/* const friends = [
   { name: "Mango", online: false },
   { name: "Kiwi", online: true },
   { name: "Poly", online: false },
   { name: "Ajax", online: false },
 ];
 
-console.table(friends);
+console.table(friends); */
 
 /* const findFriendByName = function (allfriends, friendName) {
   for (const friend of allfriends) {
@@ -526,7 +526,7 @@ console.log(getNamesByOnline(friends)); */
 console.log(getNamesByOffline(friends));
  */
 
-const getFriendsByStatus = function (allFriends) {
+/* const getFriendsByStatus = function (allFriends) {
   const friendsByStatus = {
     online: [],
     offline: [],
@@ -545,3 +545,394 @@ const getFriendsByStatus = function (allFriends) {
 };
 
 console.log(getFriendsByStatus(friends));
+ */
+
+/* const book = {
+  title: "The Last Kingdom",
+  author: "Bernard Cornwell",
+  genres: ["historical prose", "adventure"],
+  isPublic: true,
+  rating: 8.38,
+};
+
+const { title, author, genres, isPublic, rating, coverImage } = book;
+console.log(title);
+console.log(coverImage);
+
+const accessType = isPublic ? "публічному" : "закритому";
+
+const message = `Книга ${title} автора ${author} з рейтингом ${rating} знаходиться в ${accessType} доступі.`;
+console.log(message);
+ */
+
+/* const book = {
+  title: "The Last Kingdom",
+  author: "Bernard Cornwell",
+};
+
+const {
+  title,
+  author,
+  coverImage = "https://via.placeholder.com/640/480",
+} = book;
+
+console.log(title);
+console.log(author);
+console.log(coverImage); */
+
+/* const firstBook = {
+  title: "The Last Kingdom",
+  coverImage:
+    "https://images-na.ssl-images-amazon.com/images/I/51b5YG6Y1rL.jpg",
+};
+
+const {
+  title: firstTitle,
+  coverImage: firstCoverImage = "https://via.placeholder.com/640/480",
+} = firstBook;
+
+console.log(firstTitle);
+console.log(firstCoverImage); */
+
+/* const secondBook = {
+  title: "Сон смішної людини",
+};
+
+const {
+  title: secondTitle,
+  coverImage: secondCoverImage = "https://via.placeholder.com/640/480",
+} = secondBook;
+
+console.log(secondTitle);
+console.log(secondCoverImage); */
+
+/* const books = [
+  {
+    title: "The Last Kingdom",
+    author: "Bernard Cornwell",
+    rating: 8.38,
+  },
+  {
+    title: "На березі спокійних вод",
+    author: "Роберт Шеклі",
+    rating: 8.51,
+  },
+]; */
+
+// for (const book of books) {
+//   const { title, author, rating } = book;
+//   console.log(title);
+//   console.log(author);
+//   console.log(rating);
+// }
+
+/* for (const { title, author, rating } of books) {
+  console.log(title);
+  console.log(author);
+  console.log(rating);
+}
+ */
+
+/* const user = {
+  name: "Jacques Gluke",
+  tag: "jgluke",
+  stats: {
+    followers: 5603,
+    views: 4827,
+    likes: 1308,
+  },
+};
+
+const {
+  name,
+  tag,
+  stats: { followers, views, likes, userLikes = 0 },
+} = user;
+
+console.log(name);
+console.log(tag);
+console.log(followers);
+console.log(views);
+console.log(likes);
+console.log(userLikes);
+ */
+
+/* const rgb = [200, 255, 100];
+const [red, green, blue] = rgb;
+
+console.log(`R:${red}, G:${green}, B:${blue}`);
+ */
+
+/* const rgb = [200, 255, 100];
+let red, green, blue;
+
+[red, green, blue] = rgb;
+console.log(`R:${red},G:${green},B:${blue}`); */
+
+/* const rgb = [200, 100, 255];
+
+const [red, green, blue, alfa = 0.3] = rgb;
+console.log(`R:${red}, G:${green}, B:${blue}, Alfa:${alfa}`); */
+
+/* const rgb = [200, 255, 100];
+const [red, ...colors] = rgb;
+
+console.log(red);
+console.log(colors);
+ */
+
+/* const rgb = [200, 100, 255];
+
+const [, , blue] = rgb;
+
+console.log(`Blue: ${blue}`);
+ */
+
+/* function doStuffWithBook(book) {
+  console.log(book.title);
+  console.log(book.numberOfPages);
+  console.log(book.downloads);
+  console.log(book.rating);
+  console.log(book.isPublic);
+}
+
+doStuffWithBook({
+  title: "The Last Kingdom",
+  numberOfPages: 736,
+  downloads: 10283,
+  rating: 8.38,
+  isPublic: true,
+}); */
+
+/* function doStuffWithBook(book) {
+  const { title, numberOfPages, downloads, rating, isPublic } = book;
+
+  console.log(title);
+  console.log(numberOfPages);
+  console.log(downloads);
+  console.log(rating);
+  console.log(isPublic);
+}
+
+doStuffWithBook({
+  title: "The Last Kingdom",
+  numberOfPages: 736,
+  downloads: 10283,
+  rating: 8.38,
+  isPublic: true,
+}); */
+
+// !====================================================
+
+/* function doStuffWithBook({
+  title,
+  numberOfPages,
+  downloads,
+  rating,
+  isPublic,
+}) {
+  console.log(title);
+  console.log(numberOfPages);
+  console.log(downloads);
+  console.log(rating);
+  console.log(isPublic);
+}
+
+doStuffWithBook({
+  title: "The Last Kingdom",
+  numberOfPages: 736,
+  downloads: 10283,
+  rating: 8.38,
+  isPublic: true,
+});
+ */
+
+/* function getGrade(s1, s2, s3) {
+  // Code here
+  const average = Math.round((s1 + s2 + s3) / 3);
+
+  if (90 <= average && average <= 100) {
+    return "A";
+  }
+
+  if (80 <= average && average < 90) {
+    return "B";
+  }
+
+  if (70 <= average && average < 80) {
+    return "C";
+  }
+
+  if (60 <= average && average < 70) {
+    return "D";
+  }
+
+  if (0 <= average && average < 60) {
+    return "F";
+  }
+
+  return "D" === "F";
+}
+
+console.log(getGrade(95, 90, 93));
+console.log(getGrade(85, 80, 83));
+
+console.log(getGrade(70, 70, 70));
+console.log(getGrade(58, 62, 52));
+
+console.log(getGrade(528, 652, 522)); */
+/* 
+const propName = "name";
+const user = {
+  age: 25,
+  [propName]: "Генрі Сибола",
+};
+
+console.log(user.name); // 'Генрі Сибола'
+ */
+
+/* const book = {
+  title: "The Last Kingdom",
+  author: "Bernard Cornwell",
+  genres: ["historical prose", "adventure"],
+  rating: 8.38,
+};
+
+for (const key in book) {
+  // Ключ
+  console.log(key);
+  // Значення властивості з таким ключем
+  console.log(book[key]);
+}
+ */
+
+/* const authors = {
+  kiwi: 4,
+  poly: 7,
+  ajax: 9,
+  mango: 6,
+};
+
+const entries = Object.entries(authors);
+console.log(entries);
+
+for (const [name, rating] of entries) {
+  console.log(name, rating);
+}
+ */
+
+/* const profile = {
+  name: "Jacques Gluke",
+  tag: "jgluke",
+  location: "Ocho Rios, Jamaica",
+  avatar: "https://s3.amazonaws.com/uifaces/faces/twitter/r_oy/128.jpg",
+  stats: {
+    followers: 5603,
+    views: 4827,
+    likes: 1308,
+  },
+};
+
+const makeProfileMarkUp = function (userProfile) {
+  const {
+    name,
+    tag,
+    location,
+    avatar,
+    stats: { followers, views, likes },
+  } = userProfile;
+
+  return `<div>
+  <img src="${avatar}" alt="user avatar">
+  <p>${name}<span>@${tag}</span></p>
+  <p>Location: ${location}</p>
+  <ul>
+    <li>Followers: ${followers}</li>
+    <li>Views: ${views}</li>
+    <li>Likes: ${likes}</li>
+  </ul>
+</div>`;
+};
+
+const makeup = makeProfileMarkUp(profile);
+console.log(makeup);
+
+document.body.insertAdjacentHTML("afterbegin", makeup); */
+
+const cart = {
+  items: [],
+  getItems() {
+    return this.items;
+  },
+  add(product) {
+    for (const item of this.items) {
+      console.log(item);
+      if (item.name === product.name) {
+        console.log("We have this product", product.name);
+        item.quantity += 1;
+        item.price += product.price;
+        return;
+      }
+    }
+
+    const newProduct = {
+      ...product,
+      quantity: 1,
+    };
+
+    this.items.push(newProduct);
+  },
+  remove(productName) {
+    const { items } = this;
+    for (let i = 0; i < items.length; i += 1) {
+      const { name } = items[i];
+
+      if (name === productName) {
+        console.log("We found this name", productName);
+        console.log("Index", i);
+        items.splice(i, 1);
+      }
+    }
+  },
+  clear() {
+    this.items = [];
+  },
+  countTotalPrice() {
+    const { items } = this;
+    let total = 0;
+    for (const { price, quantity } of items) {
+      console.log(price);
+
+      total += price * quantity;
+    }
+    return total;
+  },
+  increaseQuantity(productName) {},
+  decreaseQuantity(productName) {},
+};
+
+console.log(cart.getItems());
+
+cart.add({ name: "🍎", price: 50 });
+cart.add({ name: "🍇", price: 70 });
+cart.add({ name: "🍋", price: 60 });
+cart.add({ name: "🍋", price: 60 });
+cart.add({ name: "🍋", price: 60 });
+cart.add({ name: "🍋", price: 60 });
+
+cart.add({ name: "🍓", price: 110 });
+cart.add({ name: "🍓", price: 110 });
+cart.add({ name: "🍓", price: 110 });
+cart.add({ name: "🍓", price: 110 });
+
+console.table(cart.getItems());
+
+cart.remove("🍓");
+
+console.table(cart.getItems());
+
+console.log("Total: ", cart.countTotalPrice());
+
+// cart.clear();
+
+console.log(cart.getItems());
