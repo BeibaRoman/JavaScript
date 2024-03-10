@@ -858,6 +858,7 @@ const makeup = makeProfileMarkUp(profile);
 console.log(makeup);
 
 document.body.insertAdjacentHTML("afterbegin", makeup); */
+// ===============================================================
 
 const cart = {
   items: [],
@@ -866,11 +867,11 @@ const cart = {
   },
   add(product) {
     for (const item of this.items) {
-      console.log(item);
       if (item.name === product.name) {
-        console.log("We have this product", product.name);
+        // console.log("We found!!");
         item.quantity += 1;
         item.price += product.price;
+
         return;
       }
     }
@@ -884,55 +885,73 @@ const cart = {
   },
   remove(productName) {
     const { items } = this;
+
     for (let i = 0; i < items.length; i += 1) {
       const { name } = items[i];
-
-      if (name === productName) {
-        console.log("We found this name", productName);
-        console.log("Index", i);
+      if (productName === name) {
         items.splice(i, 1);
+        return;
       }
     }
   },
   clear() {
-    this.items = [];
+    return (this.items = []);
   },
   countTotalPrice() {
+    let totalPrice = 0;
     const { items } = this;
-    let total = 0;
-    for (const { price, quantity } of items) {
-      console.log(price);
 
-      total += price * quantity;
+    for (const { price } of items) {
+      // console.log(price);
+
+      totalPrice += price;
     }
-    return total;
+    return `Total price: ${totalPrice}`;
   },
-  increaseQuantity(productName) {},
-  decreaseQuantity(productName) {},
+  increaseQuantity(productName) {
+    for (const item of this.items) {
+      if (item.name === productName.name) {
+        console.log((item.quantity += 1));
+        console.log((item.price += productName.price));
+      }
+    }
+  },
+  decreaseQuantity(productName) {
+    for (const item of this.items) {
+      if (item.name === productName.name) {
+        console.log((item.quantity -= 1));
+        console.log((item.price -= productName.price));
+      }
+    }
+  },
 };
 
-console.log(cart.getItems());
+// console.log(cart.getItems());
 
 cart.add({ name: "🍎", price: 50 });
+cart.add({ name: "🍋", price: 60 });
 cart.add({ name: "🍇", price: 70 });
+cart.add({ name: "🍓", price: 110 });
+cart.add({ name: "🍓", price: 110 });
 cart.add({ name: "🍋", price: 60 });
+cart.add({ name: "🍓", price: 110 });
 cart.add({ name: "🍋", price: 60 });
-cart.add({ name: "🍋", price: 60 });
-cart.add({ name: "🍋", price: 60 });
+cart.add({ name: "🍓", price: 110 });
+cart.add({ name: "🍓", price: 110 });
+cart.add({ name: "🍎", price: 50 });
+cart.add({ name: "🍎", price: 50 });
 
-cart.add({ name: "🍓", price: 110 });
-cart.add({ name: "🍓", price: 110 });
-cart.add({ name: "🍓", price: 110 });
-cart.add({ name: "🍓", price: 110 });
+// cart.remove("🍓");
 
+// console.log(cart.clear());
+
+console.log(cart.countTotalPrice());
+
+cart.increaseQuantity({ name: "🍎", price: 50 });
+cart.increaseQuantity({ name: "🍓", price: 110 });
+cart.increaseQuantity({ name: "🍋", price: 60 });
 console.table(cart.getItems());
 
-cart.remove("🍓");
+cart.decreaseQuantity({ name: "🍋", price: 60 });
 
 console.table(cart.getItems());
-
-console.log("Total: ", cart.countTotalPrice());
-
-// cart.clear();
-
-console.log(cart.getItems());
