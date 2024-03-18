@@ -1139,7 +1139,7 @@ console.log(calcTotalPrice(stones, "Смарагд")); */
 //* Example 6 - Операція rest
 // Напиши функцію transformUsername(user) так, щоб вона повертала новий об'єкт із властивістю fullName, замість firstName та lastName.
 
-function transformUsername({ firstName, lastName, ...rest }) {
+/* function transformUsername({ firstName, lastName, ...rest }) {
   //   rest.fullname = `${firstName} ${lastName}`;
   //   return rest;
 
@@ -1157,4 +1157,280 @@ console.log(
     email: "j.mercer@mail.com",
     friendCount: 40,
   })
+); */
+
+// !=============================================
+
+// Exercise 1
+// У змінних firstGroupScores, secondGroupScores і thirdGroupScores зберігаються результати тестування окремих груп. Використовуючи розподіл, доповни код таким чином, щоб:
+
+// У змінній allScores зберігався масив всіх результатів від першої до третьої групи.
+// У змінній bestScore був найвищий загальний бал.
+// У змінній worstScore був найнижчий загальний бал.
+
+/* const firstGroupScores = [64, 42, 93];
+const secondGroupScores = [89, 14, 51, 26];
+const thirdGroupScores = [29, 47, 18, 97, 81];
+// Change code below this line
+const allScores = [
+  ...firstGroupScores,
+  ...secondGroupScores,
+  ...thirdGroupScores,
+];
+console.log("🚀 ~ allScores:", allScores);
+const bestScore = Math.max(...allScores);
+
+console.log("🚀 ~ bestScore:", bestScore);
+const worstScore = Math.min(...allScores);
+
+console.log("🚀 ~ worstScore:", worstScore);
+ */
+
+//  !=============================================
+
+// Exercise 2
+
+// В конструкторі можна створювати нові тести, для яких є налаштування за замовчуванням, які зберігаються у змінній defaultSettings. Під час створення тесту, усі або частину налаштувань можна перевизначити, вони зберігаються у змінній overrideSettings.
+
+// Для того щоб отримати фінальні налаштування тесту, необхідно взяти налаштування за замовчуванням і поверх них застосувати перевизначені налаштування. Доповни код таким чином, щоб у змінній finalSettings утворився об'єкт фінальних налаштувань тесту.
+
+/* const defaultSettings = {
+  theme: "light",
+  public: true,
+  withPassword: false,
+  minNumberOfQuestions: 10,
+  timePerQuestion: 60,
+};
+const overrideSettings = {
+  public: false,
+  withPassword: true,
+  timePerQuestion: 30,
+};
+// Change code below this line
+const finalSettings = { ...defaultSettings, ...overrideSettings };
+ */
+
+//  !=============================================
+
+// Exercise 3
+
+// Напиши функцію makeTask(data) яка приймає один параметр data - об'єкт з наступними властивостями.
+
+// text - текст завдання.
+// category - категорія завдання.
+// priority - пріоритет завдання.
+// Функція повинна створити і повернути новий об'єкт завдання, не змінюючи напряму параметр data. У новому об'єкті повинна бути властивість completed, значення якої зберігається в однойменній локальній змінній.
+
+// В параметрі data гарантовано буде тільки властивість text, а інші дві, category і priority, можуть бути відсутніми. Тоді, в новому об'єкті завдання, у властивостях category і priority повинні бути значення за замовчуванням, що зберігаються в однойменних локальних змінних.
+
+/* function makeTask(data) {
+  const completed = false;
+  const category = "General";
+  const priority = "Normal";
+  // Change code below this line
+  return {
+    completed,
+    category,
+    priority,
+    ...data,
+  };
+  // Change code above this line
+}
+
+console.log(makeTask({ category: "Finance", text: "Take interest" }));
+ */
+
+//  !=============================================
+
+// Exercise 4
+
+// Використовуючи операцію rest, доповни код функції add() таким чином, щоб вона приймала будь-яку кількість аргументів (параметр args), рахувала і повертала їх суму.
+
+// Change code below this line
+/* function add(...args) {
+  // Change code above this line
+  let total = 0;
+
+  for (const item of args) {
+    total += item;
+  }
+  return total;
+}
+
+console.log(add(12, 4, 11, 48)); */
+
+//  !=============================================
+
+// Exercise 5
+
+// Функція addOverNum() рахує суму всіх аргументів. Зміни параметри і тіло функції addOverNum() таким чином, щоб вона рахувала суму тільки тих аргументів, які більші за задане число. Це число повинно бути першим параметром функції.
+
+// Для вирішення цього завдання тобі потрібно зробити наступне:
+
+// Внеси зміни в параметри і тіло функції.
+// Перший параметр повинен представляти задане число, а решта аргументів повинні бути зібрані за допомогою синтаксису (...args).
+// Усередині функції ініціалізуй змінну з назвою total і присвой їй значення 0.
+// Потім пройдись по кожному аргументу за допомогою циклу або методу ітерації.
+// Перевір, чи кожен аргумент більший за вказане число, і якщо так, додай його до total за допомогою оператора додавання (+=).
+// На завершення поверни суму total.
+
+/* function addOverNum(a, ...args) {
+  let total = 0;
+
+  for (const arg of args) {
+    if (arg > a) {
+      total += arg;
+    }
+  }
+
+  return total;
+  // Change code above this line
+}
+
+console.log(addOverNum(10, 12, 4, 11, 48, 10, 8));
+console.log(addOverNum(50, 15, 27));
+ */
+
+//  !=============================================
+
+// Exercise 6
+
+// Напиши функцію під назвою findMatches, яка приймає масив як перший аргумент і довільну кількість додаткових аргументів. Першим аргументом завжди буде масив чисел, а решта аргументів будуть просто числами.
+
+// Функція має повернути новий масив, який містить лише ті числа з додаткових аргументів, які присутні в масиві, указаному як перший аргумент. Наприклад, findMatches([1, 2, 3, 4, 5], 1, 8, 2, 7) має повернути масив [1, 2], оскільки лише ці числа містяться в першому масиві аргументів.
+
+// Поради:
+
+// Використовуй параметр rest (...args), щоб зібрати всі додаткові аргументи в масив.
+// Пройдись по кожному аргументу в args за допомогою циклу.
+// Використовуй метод includes() для масиву, щоб перевірити, чи існує кожен аргумент у масиві.
+// Якщо аргумент знайдено у масиві, додай його до масиву matches.
+// Поверни масив matches.
+
+// Change code below this line
+/* function findMatches(arr, ...args) {
+  const matches = []; // Don't change this line
+  for (const arg of args) {
+    if (arr.includes(arg)) matches.push(arg);
+  }
+
+  // Change code above this line
+  return matches;
+}
+
+console.log(findMatches([1, 2, 3, 4, 5], 1, 8, 2, 7));
+console.log(findMatches([4, 89, 17, 36, 2], 8, 17, 89, 27, 2)); */
+
+//  !=============================================
+
+// Exercise 7
+
+// Розшир функціональні можливості об’єкта bookShelf, додавши два нові методи. Ці методи мають працювати подібно до існуючих методів getBooks() і addBook(bookName), але з іншими цілями.
+
+// Метод removeBook(bookName) має повертати рядок у форматі "Deleting book <назва книги>", де <назва книги> — це значення параметра bookName.
+
+// Метод updateBook(oldName, newName) має повертати рядок у форматі "Updating book <стара назва> to <нова назва>", де <стара назва> і <нова назва> є значеннями параметрів oldName і newName відповідно.
+
+/* const bookShelf = {
+  // Change code below this line
+  books: ["The last kingdom", "The guardian of dreams"],
+  getBooks() {
+    return "Returning all books";
+  },
+  addBook(bookName) {
+    return `Adding book ${bookName}`;
+  },
+  removeBook(bookName) {
+    const index = this.books.indexOf(bookName);
+    this.books.splice(index, 1);
+    return `Deleting book ${bookName}`;
+  },
+
+  updateBook(oldName, newName) {
+    const index = this.books.indexOf(oldName);
+    this.books.splice(index, 1, newName);
+    return `Updating book ${oldName} to ${newName}`;
+  },
+  // Change code above this line
+};
+
+console.log(bookShelf.removeBook("Red sunset"));
+console.log(bookShelf.updateBook("Sands of dune", "Dune")); */
+
+//  !=============================================
+
+// Exercise 8
+
+/* const atTheOldToad = {
+  potions: [
+    { name: "Speed potion", price: 460 },
+    { name: "Dragon breath", price: 780 },
+    { name: "Stone skin", price: 520 },
+  ],
+  // Change code below this line
+  getPotions() {
+    return this.potions;
+  },
+  addPotion(newPotion) {
+    for (const { name } of this.potions) {
+      if (name === newPotion.name) {
+        return `Error! Potion ${newPotion.name} is already in your inventory!`;
+      }
+    }
+
+    this.potions.push(newPotion);
+  },
+  removePotion(potionName) {
+    for (let i = 0; i < this.potions.length; i += 1) {
+      let name = this.potions[i].name;
+      if (name === potionName) {
+        this.potions.splice(i, 1);
+        return;
+      }
+    }
+
+    return `Potion ${potionName} is not in inventory!`;
+  },
+
+  updatePotionName(oldName, newName) {
+    for (let i = 0; i < this.potions.length; i += 1) {
+      // console.log(i);
+      // console.log(this.potions[i]);
+      // console.log(this.potions[i].name);
+      if (this.potions[i].name === oldName) {
+        console.log((this.potions[i].name = newName));
+        return;
+      }
+    }
+
+    return `Potion ${oldName} is not in inventory!`;
+    // if (potionIndex === -1) {
+    //
+    // }
+
+    // this.potions.splice(potionIndex, 1, newName);
+  },
+  // Change code above this line
+};
+
+// console.log(atTheOldToad.getPotions());
+
+// console.log(atTheOldToad.addPotion({ name: "Dragon breath", price: 700 }));
+
+// console.log(atTheOldToad.addPotion({ name: "Drgon breath", price: 700 }));
+
+// console.log(atTheOldToad.getPotions());
+
+// console.log(atTheOldToad.removePotion("Speed potion"));
+// console.log(atTheOldToad.removePotion("Stone skin"));
+// console.log(atTheOldToad.removePotion("Stodfane skin"));
+// console.log(atTheOldToad.removePotion("Stone skin"));
+
+console.log(
+  atTheOldToad.updatePotionName("Stone skin", "Invulnerability potion")
 );
+
+console.log(atTheOldToad.updatePotionName("Dron breath", "Polymorth"));
+
+console.log(atTheOldToad.getPotions());
+ */
