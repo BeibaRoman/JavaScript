@@ -1434,3 +1434,219 @@ console.log(atTheOldToad.updatePotionName("Dron breath", "Polymorth"));
 
 console.log(atTheOldToad.getPotions());
  */
+// const fruits = ["apple", "peach", "pear", "banana"];
+
+// // Change code below this line
+// const lastElementIndex = fruits.length - 1;
+// const lastElement = fruits[lastElementIndex];
+
+// console.log(lastElementIndex);
+// console.log(lastElement);
+
+/* function calculateEngravingPrice(message, pricePerWord) {
+  message = message.split(" ");
+  let amountWords = 0;
+
+  for (const word of message) {
+    console.log(word);
+    amountWords += 1;
+  }
+  return amountWords * pricePerWord;
+}
+
+console.log(calculateEngravingPrice("JavaScript is in my blood", 10));
+ */
+/* 
+function slugify(title) {
+  // Change code below this line
+  return title.split(" ").join("-").toLowerCase();
+
+  // Change code above this line
+}
+console.log(slugify("Arrays for begginers"));
+ */
+
+/* function calculateTotal(number) {
+  // Change code below this line
+  let totalSum = 0;
+  for (let i = 0; i <= number; i += 1) {
+    console.log(i);
+    totalSum += i;
+  }
+
+  // Change code above this line
+  return totalSum;
+}
+
+console.log(calculateTotal(7));
+console.log(calculateTotal(24));
+ */
+
+/* function findLongestWord(string) {
+  // Change code below this line
+  const wordsArray = string.split(" ");
+  let longestWord = wordsArray[0];
+
+  for (const word of wordsArray) {
+    if (longestWord.length < word.length) {
+      longestWord = word;
+    }
+  }
+  return longestWord;
+  // Change code above this line
+}
+
+console.log(findLongestWord("The quick brown fox jumped over the lazy dog"));
+ */
+
+/* function createArrayOfNumbers(min, max) {
+  const numbers = [];
+  // Change code below this line
+  for (let i = min; i <= max; i += 1) {
+    numbers.push(i);
+  }
+
+  // Change code above this line
+  return numbers;
+}
+
+console.log(createArrayOfNumbers(14, 17));
+ */
+
+/* function filterArray(numbers, value) {
+  // Change code below this line
+  const newArray = [];
+  for (let i = 0; i < numbers.length; i += 1) {
+    if (numbers[i] > value) {
+      newArray.push(numbers[i]);
+    }
+  }
+
+  return newArray;
+  // Change code above this line
+}
+console.log(filterArray([1, 2, 3, 4, 5], 3));
+ */
+
+// function getCommonElements(array1, array2) {
+//   // Change code below this line
+//   const newArray = [];
+//   console.log(array1);
+//   console.log(array2);
+//   for (const item of array1) {
+//     // console.log(item);
+//     if (array2.includes(item)) {
+//       newArray.push(item);
+//     }
+//   }
+
+//   return newArray;
+//   // Change code above this line
+// }
+
+/* function getCommonElements(array1, array2) {
+  // Change code below this line
+  const newArray = [];
+
+  for (let i = 0; i < array1.length; i += 1) {
+    if (array2.includes(array1[i])) newArray.push(array1[i]);
+  }
+
+  return newArray;
+  // Change code above this line
+}
+
+console.log(getCommonElements([24, 12, 27, 3], [12, 8, 3, 36, 27]));
+ */
+
+/* function getEvenNumbers(start, end) {
+  // Change code below this line
+
+  const newArray = [];
+
+  for (let i = start; i <= end; i += 1) {
+    if (i % 2 === 0) {
+      newArray.push(i);
+    }
+  }
+  return newArray;
+  // Change code above this line
+}
+
+console.log(getEvenNumbers(3, 11)); */
+
+/* function includes(array, value) {
+  // Change code below this line
+
+  for (const item of array) {
+    if (item === value) {
+      return true;
+    }
+  }
+
+  return false;
+
+  // Change code above this line
+}
+
+includes([1, 2, 3, 4, 5], 17);
+console.log(includes([1, 2, 3, 4, 5], 17));
+console.log(includes([1, 2, 3, 4, 5], 3));
+console.log(includes(["apple", "plum", "pear", "orange"], "plum"));
+ */
+/* 
+function solution(str) {
+  let wordReverse = "";
+  for (let i = str.length - 1; i >= 0; i -= 1) {
+    wordReverse += str[i];
+  }
+  return wordReverse;
+}
+
+console.log(solution("world"));
+ */
+
+/* var summation = function (num) {
+  // Code here
+  let sum = 0;
+  for (let i = 1; i <= num; i += 1) {
+    sum += i;
+    console.log(i);
+  }
+  return sum;
+};
+
+console.log(summation(3));
+ */
+/* 
+function validatePIN(pin) {
+  //return true or false
+
+  let pinStr = "";
+  for (const item of pin) {
+    if (Number.isInteger(Number(item))) {
+      pinStr += item;
+    }
+  }
+  return (pinStr.length === 4 || pinStr.length === 6) && pinStr.trim() === pin;
+}
+
+console.log(validatePIN("-1234"));
+console.log(validatePIN("1236"));
+console.log(validatePIN("123456x"));
+console.log(validatePIN("123    ")); */
+
+/* function longest(s1, s2) {
+  // your code
+  const arrayConcat = [...s1, ...s2];
+  const newArray = [];
+
+  for (let i = 0; i < arrayConcat.length; i += 1) {
+    if (!newArray.includes(arrayConcat[i])) {
+      newArray.push(arrayConcat[i]);
+    }
+  }
+  return newArray.sort().join("");
+}
+
+console.log(longest("aretheyhere", "yestheyarehere")); */
