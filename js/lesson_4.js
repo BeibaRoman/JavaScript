@@ -1316,7 +1316,7 @@ console.log(getAvailableCarNames(cars)); */
 console.log(getSortedCarsOnSale(cars));
  */
 
-const numbers = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5];
+/* const numbers = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5];
 
 const uniqueNumbers = (numbers) => {
   return numbers.filter(
@@ -1324,3 +1324,661 @@ const uniqueNumbers = (numbers) => {
   );
 };
 console.log("🚀 ~ uniqueNumbers:", uniqueNumbers(numbers));
+ */
+
+// !====================================Homework===============================================
+
+// ? Exercise 1
+// Доповни код таким чином, щоб у змінній result був результат виконання функції makePizza, а у змінній pointer було посилання на функцію makePizza.
+
+// function makePizza() {
+//   return "Your pizza is being prepared, please wait.";
+// }
+// // Change code below this line
+
+// const result = makePizza();
+// const pointer = makePizza;
+
+// ? Exercise 2
+// Доповни функцію makeMessage таким чином, щоб вона очікувала другим параметром (параметр callback) колбек-функцію і повертала її виклик. Функція deliverPizza або makePizza буде передаватися як колбек і очікувати аргументом ім'я готової піци, що доставляється.
+
+// function deliverPizza(pizzaName) {
+//   return `Delivering ${pizzaName} pizza.`;
+// }
+
+// function makePizza(pizzaName) {
+//   return `Pizza ${pizzaName} is being prepared, please wait...`;
+// }
+
+// // Chande code below this line
+// function makeMessage(pizzaName, callback) {
+//   return callback(pizzaName);
+// }
+
+// ? Exercise 3
+/* Доповни другий виклик функції makePizza(pizzaName, callback), передавши другим аргументом інлайн колбек-функцію eatPizza(pizzaName), яка логує рядок "Eating pizza <назва піци>". */
+
+/* function makePizza(pizzaName, callback) {
+  console.log(`Pizza ${pizzaName} is being prepared, please wait...`);
+  callback(pizzaName);
+}
+
+makePizza("Royal Grand", function deliverPizza(pizzaName) {
+  console.log(`Delivering pizza ${pizzaName}.`);
+});
+// Change code below this line
+
+makePizza("Ultracheese", function eatPizza(pizzaName){
+ console.log(`Eating pizza ${pizzaName}`); 
+}); */
+
+// ? Exercise 4
+/* Необхідно написати логіку обробки замовлення піци. Виконай рефакторинг методу order таким чином, щоб він приймав другим і третім параметром два колбеки onSuccess і onError.
+
+Якщо у властивості pizzas відсутня піца з назвою з параметра pizzaName, метод order повинен повертати результат виклику колбека onError, передаючи йому аргументом рядок "There is no pizza with a name <имя пиццы> in the assortment."
+Якщо у властивості pizzas присутня піца з назвою з параметра pizzaName, метод order повинен повертати результат виклику колбека onSuccess, передаючи йому аргументом назву замовленої піци. */
+
+/* const pizzaPalace = {
+  pizzas: ["Ultracheese", "Smoked", "Four meats"],
+  order(pizzaName, onSuccess, onError) {
+if(this.pizzas.includes(pizzaName)){
+  return onSuccess(pizzaName)
+}
+return onError(`There is no pizza with a name ${pizzaName} in the assortment.`)
+},
+};
+// Change code above this line
+
+// Callback for onSuccess
+function makePizza(pizzaName) {
+  return `Your order is accepted. Cooking pizza ${pizzaName}.`;
+}
+
+// Callback for onError
+function onOrderError(error) {
+  return `Error! ${error}`;
+}
+
+// Method calls with callbacks
+pizzaPalace.order("Smoked", makePizza, onOrderError);
+pizzaPalace.order("Four meats", makePizza, onOrderError);
+pizzaPalace.order("Big Mike", makePizza, onOrderError);
+pizzaPalace.order("Vienna", makePizza, onOrderError); */
+
+// ? Exercise 5
+
+/* Функція calculateTotalPrice(orderedItems) приймає один параметр orderedItems - масив чисел, і розраховує загальну суму його елементів, яка зберігається у змінній totalPrice і повертається як результат роботи функції.
+
+Виконай рефакторинг функції таким чином, щоб замість циклу for, вона використовувала метод forEach. */
+
+/* 
+function calculateTotalPrice(orderedItems) {
+  let totalPrice = 0;
+  // Change code below this line
+orderedItems.forEach((number)=>{
+totalPrice += number;
+})
+
+ 
+
+  // Change code above this line
+  return totalPrice;
+}
+ */
+
+// ? Exercise 6
+
+/* Функція filterArray(numbers, value) приймає масив чисел numbers і повертає новий масив, в якому будуть тільки ті елементи оригінального масиву, які більші за значення параметра value.
+
+Виконай рефакторинг функції таким чином, щоб замість циклу for, вона використовувала метод forEach. */
+
+// function filterArray(numbers, value) {
+//   const filteredNumbers = [];
+//   // Change code below this line
+
+//   for (let i = 0; i < numbers.length; i += 1) {
+//     if (numbers[i] > value) {
+//       filteredNumbers.push(numbers[i]);
+//     }
+//   }
+
+//   // Change code above this line
+//   return filteredNumbers;
+// }
+
+/* 
+function filterArray(numbers, value) {
+  const filteredNumbers = [];
+  // Change code below this line
+numbers.forEach((number)=> {
+if(number > value){
+  filteredNumbers.push(number);
+}
+})
+
+ 
+
+  // Change code above this line
+  return filteredNumbers;
+}
+ */
+
+// ? Exercise 7
+
+/* Виконай рефакторинг функції calculateTotalPrice() таким чином, щоб вона була оголошена як стрілочна. */
+
+// const calculateTotalPrice = (quantity, pricePerItem) => quantity * pricePerItem;
+
+// ? Exercise 8
+
+/*Виконай рефакторинг функції calculateTotalPrice() таким чином, щоб вона використовувала неявне повернення */
+
+/* const calculateTotalPrice = (quantity, pricePerItem) => quantity * pricePerItem;
+// Change code above this line */
+
+// ? Exercise 9
+/* Виконай рефакторинг функції calculateTotalPrice(orderedItems), замінивши її оголошення на стрілочну функцію. Заміни колбек-функцію, передану в метод forEach(), на стрілочну функцію. */
+
+/* 
+// Change code below this line
+const calculateTotalPrice = (orderedItems) => {
+  let totalPrice = 0;
+
+  orderedItems.forEach((item) => totalPrice += item);
+
+  return totalPrice;
+}
+// Change code above this line */
+
+// ? Exercise 10
+/* Заміни оголошення функції filterArray() і колбек для методу forEach() на стрілочні функції. */
+/* 
+// Change code below this line
+const  filterArray = (numbers, value) => {
+  const filteredNumbers = [];
+
+  numbers.forEach((number) => {
+    if (number > value) {
+      filteredNumbers.push(number);
+    }
+  });
+
+  // Change code above this line
+  return filteredNumbers;
+}
+ */
+
+// ? Exercise 11
+
+/* Функція changeEven(numbers, value) приймає масив чисел numbers і оновлює кожен елемент, значення якого - це парне число, додаючи до нього значення параметра value.
+
+Виконай рефакторинг функції таким чином, щоб вона стала чистою - не змінювала масив чисел numbers, а створювала, наповнювала і повертала новий масив з оновленими значеннями. */
+
+/* function changeEven(numbers, value) {
+  // Change code below this line
+  const newArray = [...numbers];
+  for (let i = 0; i < newArray.length; i += 1) {
+    if (newArray[i] % 2 === 0) {
+      newArray[i] = newArray[i] + value;
+    }
+  }
+  return newArray;
+}
+
+console.log(changeEven([1, 2, 3, 4, 5], 10));
+ */
+
+// ? Exercise 12
+
+/* Доповни код таким чином, щоб у змінній planetsLengths вийшов масив довжин назв планет. Обов'язково використовуй метод map(). */
+
+/* const planets = ["Earth", "Mars", "Venus", "Jupiter"];
+// Change code below this line
+const planetsLengths = planets.map((planet) => planet.length);
+ */
+
+// ? Exercise 13
+/* Використовуючи метод map(), зроби так, щоб у змінній titles вийшов масив назв книг (властивість title) з усіх об'єктів масиву books. */
+
+/* const books = [
+  {
+    title: "The Last Kingdom",
+    author: "Bernard Cornwell",
+    rating: 8.38,
+  },
+  {
+    title: "Beside Still Waters",
+    author: "Robert Sheckley",
+    rating: 8.51,
+  },
+  {
+    title: "The Dream of a Ridiculous Man",
+    author: "Fyodor Dostoevsky",
+    rating: 7.75,
+  },
+  { title: "Redder Than Blood", author: "Tanith Lee", rating: 7.94 },
+  { title: "Enemy of God", author: "Bernard Cornwell", rating: 8.67 },
+];
+// Change code below this line
+
+const titles = books.map(book => book.title); */
+
+// ? Exercise 14
+/* Використовуючи метод flatMap(), зроби так, щоб у змінній genres вийшов масив усіх жанрів книг (властивість genres) з масиву книг books. */
+
+/* const books = [
+  {
+    title: "The Last Kingdom",
+    author: "Bernard Cornwell",
+    genres: ["adventure", "history"],
+  },
+  {
+    title: "Beside Still Waters",
+    author: "Robert Sheckley",
+    genres: ["fiction"],
+  },
+  {
+    title: "Redder Than Blood",
+    author: "Tanith Lee",
+    genres: ["horror", "mysticism"],
+  },
+];
+// Change code below this line
+
+const genres = books.flatMap(book => book.genres); */
+
+// ? Exercise 15
+
+const users = [
+  {
+    name: "Moore Hensley",
+    email: "moorehensley@indexia.com",
+    eyeColor: "blue",
+    friends: ["Sharron Pace"],
+    isActive: false,
+    balance: 2811,
+    skills: ["ipsum", "lorem"],
+    gender: "male",
+    age: 37,
+  },
+  {
+    name: "Sharlene Bush",
+    email: "sharlenebush@tubesys.com",
+    eyeColor: "blue",
+    friends: ["Briana Decker", "Sharron Pace"],
+    isActive: true,
+    balance: 3821,
+    skills: ["tempor", "mollit", "commodo", "veniam", "laborum"],
+    gender: "female",
+    age: 34,
+  },
+  {
+    name: "Ross Vazquez",
+    email: "rossvazquez@xinware.com",
+    eyeColor: "green",
+    friends: ["Marilyn Mcintosh", "Padilla Garrison", "Naomi Buckner"],
+    isActive: false,
+    balance: 3793,
+    skills: ["nulla", "anim", "proident", "ipsum", "elit"],
+    gender: "male",
+    age: 24,
+  },
+  {
+    name: "Elma Head",
+    email: "elmahead@omatom.com",
+    eyeColor: "green",
+    friends: ["Goldie Gentry", "Aisha Tran"],
+    isActive: true,
+    balance: 2278,
+    skills: ["adipisicing", "irure", "velit"],
+    gender: "female",
+    age: 21,
+  },
+  {
+    name: "Carey Barr",
+    email: "careybarr@nurali.com",
+    eyeColor: "blue",
+    friends: ["Jordan Sampson", "Eddie Strong"],
+    isActive: true,
+    balance: 3951,
+    skills: ["ex", "culpa", "nostrud"],
+    gender: "male",
+    age: 27,
+  },
+  {
+    name: "Blackburn Dotson",
+    email: "blackburndotson@furnigeer.com",
+    eyeColor: "brown",
+    friends: ["Jacklyn Lucas", "Linda Chapman"],
+    isActive: false,
+    balance: 1498,
+    skills: ["non", "amet", "ipsum"],
+    gender: "male",
+    age: 38,
+  },
+  {
+    name: "Sheree Anthony",
+    email: "shereeanthony@kog.com",
+    eyeColor: "brown",
+    friends: ["Goldie Gentry", "Briana Decker"],
+    isActive: true,
+    balance: 2764,
+    skills: ["lorem", "veniam", "culpa"],
+    gender: "female",
+    age: 39,
+  },
+];
+
+/* Доповни функцію getUserEmails(users) таким чином, щоб вона повертала масив поштових адрес користувачів (властивість email) з масиву об'єктів в параметрі users. */
+
+/* const getUserEmails = users => {
+    return users.map(user => user.email)
+
+  }; */
+
+// ? Exercise 15
+/* const numbers = [17, 24, 82, 61, 36, 18, 47, 52, 73];
+// Change code below this line
+
+const evenNumbers = numbers.filter((number) => number % 2 === 0);
+console.log("🚀 ~ evenNumbers:", evenNumbers);
+const oddNumbers = numbers.filter((number) => number % 2 !== 0);
+console.log("🚀 ~ oddNumbers:", oddNumbers);
+ */
+
+// ? Exercise 16
+/* Використовуючи метод filter(), доповни код таким чином, щоб:
+
+У змінній topRatedBooks утворився масив книг, рейтинг яких (властивість rating) більший за або дорівнює значенню змінної MIN_RATING.
+У змінній booksByAuthor утворився масив книг, написаних автором з ім'ям (властивість author), яке збігається зі значенням у змінній AUTHOR. */
+
+/* const books = [
+  {
+    title: "The Last Kingdom",
+    author: "Bernard Cornwell",
+    rating: 8.38,
+  },
+  {
+    title: "Beside Still Waters",
+    author: "Robert Sheckley",
+    rating: 8.51,
+  },
+  {
+    title: "The Dream of a Ridiculous Man",
+    author: "Fyodor Dostoevsky",
+    rating: 7.75,
+  },
+  { title: "Redder Than Blood", author: "Tanith Lee", rating: 7.94 },
+  { title: "Enemy of God", author: "Bernard Cornwell", rating: 8.67 },
+];
+
+const MIN_RATING = 8;
+const AUTHOR = "Bernard Cornwell";
+// Change code below this line
+
+const topRatedBooks = books.filter(book => book.rating > MIN_RATING);
+const booksByAuthor = books.filter(book => book.author === AUTHOR); */
+
+// ? Exercise 17
+/* Доповни функцію getUsersWithEyeColor(users, color) таким чином, щоб вона повертала масив користувачів, у яких колір очей (властивість eyeColor) збігається зі значенням параметра color. */
+
+/* const getUsersWithEyeColor = (users, color) => {
+  return users.filter(user => user.eyeColor === color)
+ 
+ }; */
+
+// ? Exercise 18
+
+/* Доповни код функції getUsersWithAge(users, minAge, maxAge), щоб повернути масив користувачів, вік (збережений у властивості age) яких потрапляє у заданий діапазон від minAge до maxAge.
+
+Поради:
+
+Використай метод filter() для створення нового масиву, в якому зберігаються тільки елементи, які задовольняють певну умову.
+Використай оператори >= (більше або дорівнює) та <= (менше або дорівнює), щоб відфільтрувати користувачів, вік яких точно потрапляє у діапазон між мінімальним minAge та максимальним maxAge значеннями. */
+
+/* const getUsersWithAge = (users, minAge, maxAge) => {
+  return users.filter(user => user.age >= minAge && user.age <= maxAge)
+ 
+ }; */
+
+// ? Exercise 18
+/* Доповни функцію getUsersWithFriend(users, friendName) таким чином, щоб вона повертала масив користувачів, у яких є друг з вказаним іменем friendName. Друзі кожного користувача зберігаються у властивості friends.
+
+Поради:
+
+Метод filter() можна використовувати для створення нового масиву з елементами, які задовольняють певну умову.
+Використовуй метод includes() для перевірки, чи масив friends містить friendName. */
+
+/* const getUsersWithFriend = (users, friendName) => {
+  return users.filter((user) => user.friends.includes(friendName));
+};
+ */
+
+// ? Exercise 19
+
+/* Доповни функцію getFriends(users) таким чином, щоб вона повертала масив друзів всіх користувачів (властивість friends). У декількох користувачів можуть бути однакові друзі, зроби так, щоб масив, що повертається, не містив повторень. */
+
+/* const getFriends = (users) => {
+  return users
+    .flatMap((user) => user.friends)
+    .filter((friend, index, array) => array.indexOf(friend) === index);
+};
+
+console.log(getFriends(users));
+ */
+
+// ? Exercise 20
+
+/* Доповни функцію getActiveUsers(users) таким чином, щоб вона повертала масив активних користувачів, значення властивості isActive яких - true. */
+
+/* // Change code below this line
+const getActiveUsers = (users) => {
+  return users.filter((user) => user.isActive);
+};
+// Change code above this line
+ */
+
+// ? Exercise 21
+
+/* Використовуючи метод find(), доповни код таким чином, щоб:
+
+У змінній bookWithTitle утворився об'єкт книги, назва якої (властивість title) збігається зі значенням змінної BOOK_TITLE.
+У змінній bookByAuthor утворився об'єкт книги, автор якої (властивість author) збігається зі значенням змінної AUTHOR. */
+
+/* const books = [
+  {
+    title: 'The Last Kingdom',
+    author: 'Bernard Cornwell',
+    rating: 8.38,
+  },
+  {
+    title: 'Beside Still Waters',
+    author: 'Robert Sheckley',
+    rating: 8.51,
+  },
+  {
+    title: 'The Dream of a Ridiculous Man',
+    author: 'Fyodor Dostoevsky',
+    rating: 7.75,
+  },
+  { title: 'Redder Than Blood', author: 'Tanith Lee', rating: 7.94 },
+];
+const BOOK_TITLE = 'The Dream of a Ridiculous Man';
+const AUTHOR = 'Robert Sheckley';
+// Change code below this line
+
+const bookWithTitle = books.find(book => book.title === BOOK_TITLE);
+const bookByAuthor = books.find(book => book.author === AUTHOR);
+ */
+
+// ? Exercise 22
+
+/* Ігровому сервісу необхідний функціонал підрахунку середнього часу, проведеного в іграх. Доповни код таким чином, щоб у змінній totalPlayTime вийшло загальний ігровий час з масиву playtimes. */
+
+/* const players = {
+  mango: 1270,
+  poly: 468,
+  ajax: 710,
+  kiwi: 244
+};
+const playtimes = Object.values(players); // [1270, 468, 710, 244]
+// Change code below this line
+
+const totalPlayTime = playtimes.reduce((totalSum, num) => totalSum + num, 0);
+
+// Change code above this line
+const averagePlayTime = totalPlayTime / playtimes.length; */
+
+// ? Exercise 23
+
+/* Нашому сервісу необхідно розрахувати середній час, проведений в одній грі для кожного гравця, і отримати загальну суму цих значень часу. Розрахувати час для кожного з гравців можна, розділивши його час (властивість playtime) на кількість ігор (властивість gamesPlayed).
+
+Поради:
+
+Використовуй метод reduce() для ітерації по масиву players та обчислення загальної суми середнього часу гри на одну гру.
+Усередині колбек функції reduce(), поділи playtime гравця на gamesPlayed, щоб отримати середній час, витрачений на одну гру.
+Накопичуй результат у змінній acc і повертай його в кінці кожної ітерації.
+Ініціалізуй параметр acc методу reduce() початковим значенням 0, щоб уникнути отримання NaN при виконанні обчислень.
+Після зменшення змінна totalAveragePlaytimePerGame міститиме загальну суму середнього часу гри на одну гру для всіх гравців. */
+
+/* const players = [
+  { name: "Mango", playtime: 1270, gamesPlayed: 4 },
+  { name: "Poly", playtime: 469, gamesPlayed: 2 },
+  { name: "Ajax", playtime: 690, gamesPlayed: 3 },
+  { name: "Kiwi", playtime: 241, gamesPlayed: 1 },
+];
+// Change code below this line
+
+const totalAveragePlaytimePerGame = players.reduce((acc, player)=>{
+return acc += player.playtime / player.gamesPlayed;
+}, 0); */
+
+// ? Exercise 24
+
+/* Доповни функцію getTotalFriendCount(users) таким чином, щоб вона рахувала і повертала загальну кількість друзів (властивість friends) усіх користувачів з масиву users. */
+
+/* const getTotalFriendCount = (users) => {
+  return users.reduce((total, user) => total + user.friends.length, 0);
+};
+
+console.log(getTotalFriendCount(users));
+ */
+
+// ? Exercise 25
+
+/* Онлайн бібіліотеці необхідно відображати книги, відсортовані за автором, в алфавітному і зворотному алфавітному порядку. Доповни код таким чином, щоб у змінній authorsInAlphabetOrder вийшла копія масиву authors, відсортована за алфавітом, а у змінній authorsInReversedOrder - копія, відсортована у зворотному алфавітному порядку. */
+
+/* const authors = [
+  "Tanith Lee",
+  "Bernard Cornwell",
+  "Robert Sheckley",
+  "Fyodor Dostoevsky",
+  "Howard Lovecraft",
+];
+// Change code below this line
+
+const authorsInAlphabetOrder = [...authors].sort((a, b)=> a.localeCompare(b));
+
+const authorsInReversedOrder = [...authors].sort((a, b)=> b.localeCompare(a)); */
+
+// ? Exercise 26
+
+/* const books = [
+  {
+    title: "The Last Kingdom",
+    author: "Bernard Cornwell",
+    rating: 8.38,
+  },
+  {
+    title: "Beside Still Waters",
+    author: "Robert Sheckley",
+    rating: 8.51,
+  },
+  {
+    title: "The Dream of a Ridiculous Man",
+    author: "Fyodor Dostoevsky",
+    rating: 7.75,
+  },
+  { title: "Redder Than Blood", author: "Tanith Lee", rating: 7.94 },
+  { title: "Enemy of God", author: "Bernard Cornwell", rating: 8.67 },
+];
+// Change code below this line
+
+const sortedByAuthorName = [...books].sort((a, b) =>
+  a.author.localeCompare(b.author)
+);
+
+const sortedByReversedAuthorName = [...books].sort((a, b) =>
+  b.author.localeCompare(a.author)
+);
+
+const sortedByAscendingRating = [...books].sort((a, b) => a.rating - b.rating);
+
+const sortedByDescentingRating = [...books].sort((a, b) => b.rating - a.rating);
+ */
+
+// ? Exercise 27
+/* 
+const sortByDescendingFriendCount = (users) => {
+  return [...users].sort((a, b) => a.friends.length - b.friends.length);
+};
+
+console.log(sortByDescendingFriendCount(users));
+ */
+
+// ? Exercise 28
+
+/* Доповни код таким чином, щоб у змінній names вийшов масив імен авторів в алфавітному порядку, рейтинг книг яких більший за значення змінної MIN_BOOK_RATING. */
+
+/* const books = [
+  {
+    title: "The Last Kingdom",
+    author: "Bernard Cornwell",
+    rating: 8.38,
+  },
+  {
+    title: "Beside Still Waters",
+    author: "Robert Sheckley",
+    rating: 8.51,
+  },
+  {
+    title: "The Dream of a Ridiculous Man",
+    author: "Fyodor Dostoevsky",
+    rating: 7.75,
+  },
+  { title: "Redder Than Blood", author: "Tanith Lee", rating: 7.94 },
+  {
+    title: "The Dreams in the Witch House",
+    author: "Howard Lovecraft",
+    rating: 8.67,
+  },
+];
+const MIN_BOOK_RATING = 8;
+// Change code below this line
+
+const names = books
+  .filter((book) => book.rating > MIN_BOOK_RATING)
+  .sort((a, b) => a.author.localeCompare(b.author))
+  .map((name) => name.author);
+ */
+
+// ? Exercise 29
+/* Доповни функцію getNamesSortedByFriendCount(users) таким чином, щоб вона повертала масив імен користувачів, відсортований за зростанням кількості їхніх друзів (властивість friends). */
+
+/* const getNamesSortedByFriendCount = users => {
+  return [...users].sort((a, b )=> a.friends.length - b.friends.length).map(user => user.name)
+}; */
+
+// ? Exercise 30
+
+/* Доповни функцію getSortedFriends(users) таким чином, щоб вона повертала масив унікальних імен друзів (властивість friends), відсортований за алфавітом. */
+
+/* const getSortedFriends = (users) => {
+  return [...users]
+    .flatMap((user) => user.friends)
+    .filter((user, index, array) => array.indexOf(user) === index)
+    .sort((a, b) => a.localeCompare(b));
+};
+
+console.log(getSortedFriends(users));
+ */
