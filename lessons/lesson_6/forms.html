@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Forms</title>
+</head>
+
+<body>
+
+
+  <form class="js-register-form" autocomplete="off">
+    <div role="group">
+      <label>
+        Почта
+        <input type="email" name="email" />
+      </label>
+      <label>
+        Пароль
+        <input name="password" type="password" />
+      </label>
+    </div>
+
+    <br />
+    <div role="group">
+      <b>Тип подписки:</b>
+      <label>
+        <input type="radio" name="subscription" value="free" />
+        Free
+      </label>
+      <label>
+        <input type="radio" name="subscription" value="basic" />
+        Basic
+      </label>
+      <label>
+        <input type="radio" name="subscription" value="pro" />
+        Pro
+      </label>
+    </div>
+
+    <br />
+    <button type="submit">Зарегистрироваться</button>
+  </form>
+
+
+  <script type="module" src="./lesson_6/02-forms.js"></script>
+</body>
+
+</html>
