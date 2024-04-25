@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+  <title>Laze-load</title>
+  <style>
+    .feed {
+      list-style: none;
+    }
+
+    .feed li:not(:last-child) {
+      margin-bottom: 32px;
+    }
+
+    .feed img {
+      transform: translateX(-50%);
+      opacity: 0;
+      transition: all 500ms linear;
+      width: 640px;
+      height: 480px;
+      object-fit: cover;
+    }
+
+    .feed img.appear {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  </style>
+</head>
+
+<body>
+
+  <ul class="feed">
+    <li class="feed__item">
+      <img loading="lazy" class="lazyload" data-src="https://picsum.photos/id/237/200/300"
+        alt="avocado-cooked-delicious-dish" width="640" height="480" />
+      <p>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugit minus
+        soluta sed ea rem, debitis nulla ratione eos quia exercitationem
+        perspiciatis! Nam tenetur doloremque libero, fuga aperiam delectus
+        fugit dolor deserunt, rerum aliquid animi error nobis quae mollitia
+        tempore ab eos? Pariatur enim saepe nostrum aspernatur ea quam labore
+        dolores, excepturi ex necessitatibus aliquam numquam, illum harum
+        minima eveniet atque sit. Optio, consequatur. Nam facere culpa tenetur
+        laudantium eaque nesciunt repellat alias iure. Maxime quos consectetur
+        quas cum doloremque maiores recusandae, assumenda similique cumque in.
+        Consequuntur corrupti vero atque, nam facilis blanditiis saepe
+        similique, quisquam doloribus asperiores officiis ab distinctio.
+      </p>
+    </li>
+    <li class="feed__item">
+      <img loading="lazy" class="lazyload" data-src="https://picsum.photos/seed/picsum/200/300"
+        alt="black-frying-pan-with-spaghetti-sauce-near-brown-wooden" width="640" height="480" />
+      <p>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugit minus
+        soluta sed ea rem, debitis nulla ratione eos quia exercitationem
+        perspiciatis! Nam tenetur doloremque libero, fuga aperiam delectus
+        fugit dolor deserunt, rerum aliquid animi error nobis quae mollitia
+        tempore ab eos? Pariatur enim saepe nostrum aspernatur ea quam labore
+        dolores, excepturi ex necessitatibus aliquam numquam, illum harum
+        minima eveniet atque sit. Optio, consequatur. Nam facere culpa tenetur
+        laudantium eaque nesciunt repellat alias iure. Maxime quos consectetur
+        quas cum doloremque maiores recusandae, assumenda similique cumque in.
+        Consequuntur corrupti vero atque, nam facilis blanditiis saepe
+        similique, quisquam doloribus asperiores officiis ab distinctio.
+      </p>
+    </li>
+    <li class="feed__item">
+      <img loading="lazy" class="lazyload" data-src="https://picsum.photos/200/300?grayscale"
+        alt="blueberries-cake-chocolate-chocolate-cake" width="640" height="480" />
+      <p>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugit minus
+        soluta sed ea rem, debitis nulla ratione eos quia exercitationem
+        perspiciatis! Nam tenetur doloremque libero, fuga aperiam delectus
+        fugit dolor deserunt, rerum aliquid animi error nobis quae mollitia
+        tempore ab eos? Pariatur enim saepe nostrum aspernatur ea quam labore
+        dolores, excepturi ex necessitatibus aliquam numquam, illum harum
+        minima eveniet atque sit. Optio, consequatur. Nam facere culpa tenetur
+        laudantium eaque nesciunt repellat alias iure. Maxime quos consectetur
+        quas cum doloremque maiores recusandae, assumenda similique cumque in.
+        Consequuntur corrupti vero atque, nam facilis blanditiis saepe
+        similique, quisquam doloribus asperiores officiis ab distinctio.
+      </p>
+    </li>
+    <li class="feed__item">
+      <img loading="lazy" class="lazyload" data-src="https://picsum.photos/200/300/?blur"
+        alt="blur-breakfast-close-up-dairy-product" width="640" height="480" />
+      <p>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugit minus
+        soluta sed ea rem, debitis nulla ratione eos quia exercitationem
+        perspiciatis! Nam tenetur doloremque libero, fuga aperiam delectus
+        fugit dolor deserunt, rerum aliquid animi error nobis quae mollitia
+        tempore ab eos? Pariatur enim saepe nostrum aspernatur ea quam labore
+        dolores, excepturi ex necessitatibus aliquam numquam, illum harum
+        minima eveniet atque sit. Optio, consequatur. Nam facere culpa tenetur
+        laudantium eaque nesciunt repellat alias iure. Maxime quos consectetur
+        quas cum doloremque maiores recusandae, assumenda similique cumque in.
+        Consequuntur corrupti vero atque, nam facilis blanditiis saepe
+        similique, quisquam doloribus asperiores officiis ab distinctio.
+      </p>
+    </li>
+    <li class="feed__item">
+      <img loading="lazy" class="lazyload" data-src="https://picsum.photos/id/870/200/300?grayscale&blur=2"
+        alt="flat-lay-photography-of-vegetable-salad-on-plate" width="640" height="480" />
+      <p>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugit minus
+        soluta sed ea rem, debitis nulla ratione eos quia exercitationem
+        perspiciatis! Nam tenetur doloremque libero, fuga aperiam delectus
+        fugit dolor deserunt, rerum aliquid animi error nobis quae mollitia
+        tempore ab eos? Pariatur enim saepe nostrum aspernatur ea quam labore
+        dolores, excepturi ex necessitatibus aliquam numquam, illum harum
+        minima eveniet atque sit. Optio, consequatur. Nam facere culpa tenetur
+        laudantium eaque nesciunt repellat alias iure. Maxime quos consectetur
+        quas cum doloremque maiores recusandae, assumenda similique cumque in.
+        Consequuntur corrupti vero atque, nam facilis blanditiis saepe
+        similique, quisquam doloribus asperiores officiis ab distinctio.
+      </p>
+    </li>
+    <li class="feed__item">
+      <img loading="lazy" class="lazyload"
+        data-src="https://fastly.picsum.photos/id/13/2500/1667.jpg?hmac=SoX9UoHhN8HyklRA4A3vcCWJMVtiBXUg0W4ljWTor7s"
+        alt="food-dinner-lunch-unhealthy" width="640" height="480" />
+      <p>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugit minus
+        soluta sed ea rem, debitis nulla ratione eos quia exercitationem
+        perspiciatis! Nam tenetur doloremque libero, fuga aperiam delectus
+        fugit dolor deserunt, rerum aliquid animi error nobis quae mollitia
+        tempore ab eos? Pariatur enim saepe nostrum aspernatur ea quam labore
+        dolores, excepturi ex necessitatibus aliquam numquam, illum harum
+        minima eveniet atque sit. Optio, consequatur. Nam facere culpa tenetur
+        laudantium eaque nesciunt repellat alias iure. Maxime quos consectetur
+        quas cum doloremque maiores recusandae, assumenda similique cumque in.
+        Consequuntur corrupti vero atque, nam facilis blanditiis saepe
+        similique, quisquam doloribus asperiores officiis ab distinctio.
+      </p>
+    </li>
+    <li class="feed__item">
+      <img loading="lazy" class="lazyload"
+        data-src="https://fastly.picsum.photos/id/14/2500/1667.jpg?hmac=ssQyTcZRRumHXVbQAVlXTx-MGBxm6NHWD3SryQ48G-o"
+        alt="food-plate-chocolate-dessert" width="640" height="480" />
+      <p>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugit minus
+        soluta sed ea rem, debitis nulla ratione eos quia exercitationem
+        perspiciatis! Nam tenetur doloremque libero, fuga aperiam delectus
+        fugit dolor deserunt, rerum aliquid animi error nobis quae mollitia
+        tempore ab eos? Pariatur enim saepe nostrum aspernatur ea quam labore
+        dolores, excepturi ex necessitatibus aliquam numquam, illum harum
+        minima eveniet atque sit. Optio, consequatur. Nam facere culpa tenetur
+        laudantium eaque nesciunt repellat alias iure. Maxime quos consectetur
+        quas cum doloremque maiores recusandae, assumenda similique cumque in.
+        Consequuntur corrupti vero atque, nam facilis blanditiis saepe
+        similique, quisquam doloribus asperiores officiis ab distinctio.
+      </p>
+    </li>
+    <li class="feed__item">
+      <img loading="lazy" class="lazyload"
+        data-src="https://fastly.picsum.photos/id/17/2500/1667.jpg?hmac=HD-JrnNUZjFiP2UZQvWcKrgLoC_pc_ouUSWv8kHsJJY"
+        alt="beef-steak-with-sauce" width="640" height="480" />
+      <p>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugit minus
+        soluta sed ea rem, debitis nulla ratione eos quia exercitationem
+        perspiciatis! Nam tenetur doloremque libero, fuga aperiam delectus
+        fugit dolor deserunt, rerum aliquid animi error nobis quae mollitia
+        tempore ab eos? Pariatur enim saepe nostrum aspernatur ea quam labore
+        dolores, excepturi ex necessitatibus aliquam numquam, illum harum
+        minima eveniet atque sit. Optio, consequatur. Nam facere culpa tenetur
+        laudantium eaque nesciunt repellat alias iure. Maxime quos consectetur
+        quas cum doloremque maiores recusandae, assumenda similique cumque in.
+        Consequuntur corrupti vero atque, nam facilis blanditiis saepe
+        similique, quisquam doloribus asperiores officiis ab distinctio.
+      </p>
+    </li>
+    <li class="feed__item">
+      <img loading="lazy" class="lazyload"
+        data-src="https://fastly.picsum.photos/id/20/3670/2462.jpg?hmac=CmQ0ln-k5ZqkdtLvVO23LjVAEabZQx2wOaT4pyeG10I"
+        alt="pasta-with-tomato-and-basil" width="640" height="480" />
+      <p>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugit minus
+        soluta sed ea rem, debitis nulla ratione eos quia exercitationem
+        perspiciatis! Nam tenetur doloremque libero, fuga aperiam delectus
+        fugit dolor deserunt, rerum aliquid animi error nobis quae mollitia
+        tempore ab eos? Pariatur enim saepe nostrum aspernatur ea quam labore
+        dolores, excepturi ex necessitatibus aliquam numquam, illum harum
+        minima eveniet atque sit. Optio, consequatur. Nam facere culpa tenetur
+        laudantium eaque nesciunt repellat alias iure. Maxime quos consectetur
+        quas cum doloremque maiores recusandae, assumenda similique cumque in.
+        Consequuntur corrupti vero atque, nam facilis blanditiis saepe
+        similique, quisquam doloribus asperiores officiis ab distinctio.
+      </p>
+    </li>
+    <li class="feed__item">
+      <img loading="lazy" class="lazyload"
+        data-src="https://fastly.picsum.photos/id/22/4434/3729.jpg?hmac=fjZdkSMZJNFgsoDh8Qo5zdA_nSGUAWvKLyyqmEt2xs0"
+        alt="sliced-vegetable-and-cooked-food-on-white-ceramic-plate" width="640" height="480" />
+      <p>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugit minus
+        soluta sed ea rem, debitis nulla ratione eos quia exercitationem
+        perspiciatis! Nam tenetur doloremque libero, fuga aperiam delectus
+        fugit dolor deserunt, rerum aliquid animi error nobis quae mollitia
+        tempore ab eos? Pariatur enim saepe nostrum aspernatur ea quam labore
+        dolores, excepturi ex necessitatibus aliquam numquam, illum harum
+        minima eveniet atque sit. Optio, consequatur. Nam facere culpa tenetur
+        laudantium eaque nesciunt repellat alias iure. Maxime quos consectetur
+        quas cum doloremque maiores recusandae, assumenda similique cumque in.
+        Consequuntur corrupti vero atque, nam facilis blanditiis saepe
+        similique, quisquam doloribus asperiores officiis ab distinctio.
+      </p>
+    </li>
+    <li class="feed__item">
+      <img loading="lazy" class="lazyload"
+        data-src="https://fastly.picsum.photos/id/26/4209/2769.jpg?hmac=vcInmowFvPCyKGtV7Vfh7zWcA_Z0kStrPDW3ppP0iGI"
+        alt="steak-food" width="640" height="480" />
+      <p>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugit minus
+        soluta sed ea rem, debitis nulla ratione eos quia exercitationem
+        perspiciatis! Nam tenetur doloremque libero, fuga aperiam delectus
+        fugit dolor deserunt, rerum aliquid animi error nobis quae mollitia
+        tempore ab eos? Pariatur enim saepe nostrum aspernatur ea quam labore
+        dolores, excepturi ex necessitatibus aliquam numquam, illum harum
+        minima eveniet atque sit. Optio, consequatur. Nam facere culpa tenetur
+        laudantium eaque nesciunt repellat alias iure. Maxime quos consectetur
+        quas cum doloremque maiores recusandae, assumenda similique cumque in.
+        Consequuntur corrupti vero atque, nam facilis blanditiis saepe
+        similique, quisquam doloribus asperiores officiis ab distinctio.
+      </p>
+    </li>
+    <li class="feed__item">
+      <img loading="lazy" class="lazyload"
+        data-src="https://fastly.picsum.photos/id/27/3264/1836.jpg?hmac=p3BVIgKKQpHhfGRRCbsi2MCAzw8mWBCayBsKxxtWO8g"
+        alt="top-view-photo-of-food-dessert" width="640" height="480" />
+      <p>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugit minus
+        soluta sed ea rem, debitis nulla ratione eos quia exercitationem
+        perspiciatis! Nam tenetur doloremque libero, fuga aperiam delectus
+        fugit dolor deserunt, rerum aliquid animi error nobis quae mollitia
+        tempore ab eos? Pariatur enim saepe nostrum aspernatur ea quam labore
+        dolores, excepturi ex necessitatibus aliquam numquam, illum harum
+        minima eveniet atque sit. Optio, consequatur. Nam facere culpa tenetur
+        laudantium eaque nesciunt repellat alias iure. Maxime quos consectetur
+        quas cum doloremque maiores recusandae, assumenda similique cumque in.
+        Consequuntur corrupti vero atque, nam facilis blanditiis saepe
+        similique, quisquam doloribus asperiores officiis ab distinctio.
+      </p>
+    </li>
+  </ul>
+
+
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js"
+    integrity="sha512-WFN04846sdKMIP5LKNphMaWzU7YpMyCU245etK3g/2ARYbPK9Ub18eG+ljU96qKRCWh+quCY7yefSmlkQw1ANQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <script type="module" src="js/lazy-load.js"></script>
+</body>
+
+</html>
