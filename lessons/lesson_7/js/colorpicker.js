@@ -14,23 +14,53 @@ const colors = [
   { hex: "#607d8b", rgb: "96,125,139" },
 ];
 
-const palettecontainer = document.querySelector(".js-palette");
+const paletteContainer = document.querySelector(".js-palette");
+
+paletteContainer.addEventListener("click", onCardClick);
 
 const cardMarkup = makeColorPickerCard(colors);
 
-palettecontainer.insertAdjacentHTML("afterbegin", cardMarkup);
+paletteContainer.insertAdjacentHTML("afterbegin", cardMarkup);
+
+function onCardClick(e) {
+  if (!e.target.classList.contains("color-swatch")) {
+    return;
+  }
+
+  const swatchEl = e.target;
+  const parentColorCard = swatchEl.closest(".color-card");
+
+  removeActiveCardClass();
+  addActiveCardClass(parentColorCard);
+  changeBodyBgColor(swatchEl.dataset.hex);
+}
+
+function addActiveCardClass(card) {
+  card.classList.add("is-active");
+}
+
+function removeActiveCardClass() {
+  const currentActiveCard = document.querySelector(".color-card.is-active");
+  if (currentActiveCard) {
+    currentActiveCard.classList.remove("is-active");
+  }
+}
+
+function changeBodyBgColor(color) {
+  document.body.style.backgroundColor = color;
+}
 
 function makeColorPickerCard(colors) {
   return colors
     .map(({ hex, rgb }) => {
       return `
   <div class="color-card">
-   <div><div><div> <div
+  <div
    class="color-swatch"
    data-hex="${hex}"
    data-rgb="${rgb}"
    style="background-color: ${hex}"
- ></div></div></div></div>
+ ></div>
     <div class="color-meta">
       <p>HEX: ${hex}</p>
       <p>RGB: ${rgb}</p>
@@ -40,5 +70,3 @@ function makeColorPickerCard(colors) {
     })
     .join("");
 }
-
-console.log(makeColorPickerCard(colors));
