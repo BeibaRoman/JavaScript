@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/form.css">
+  <title>Form</title>
+</head>
+
+<body>
+
+
+  <form id="signInForm">
+    <fieldset>
+      <legend>Sign in</legend>
+      <label>Enter your login
+        <input type="text" id="loginInput" placeholder="Login" data-min-length="3" data-max-length="10">
+      </label>
+      <label>Enter your password
+        <input type="password" id="passwordInput" placeholder="Password" data-min-length="8" data-max-length="15">
+      </label>
+    </fieldset>
+  </form>
+
+
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js"
+    integrity="sha512-WFN04846sdKMIP5LKNphMaWzU7YpMyCU245etK3g/2ARYbPK9Ub18eG+ljU96qKRCWh+quCY7yefSmlkQw1ANQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <script type="module" src="js/form.js"></script>
+</body>
+
+</html>
